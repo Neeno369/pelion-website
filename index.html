@@ -299,6 +299,9 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         </div>
       </div>
       <form id="reserve" novalidate>
+        <input type="hidden" name="_subject" value="New Pelion reservation">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <h3>Reserve your spot</h3>
         <p class="note">No charge today. We'll contact you before opening to confirm.</p>
         <div class="row2">
@@ -360,8 +363,8 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 (function () {
   // Founding spots claimed so far. Update this number as reservations come in.
   var FOUNDING_TOTAL = 200, FOUNDING_CLAIMED = 0;
-  // Where reservations are sent. Set to a form endpoint (for example Formspree) once the site is live.
-  var FORM_ENDPOINT = "";
+  // Reservations are emailed to the owner through FormSubmit.
+  var FORM_ENDPOINT = "https://formsubmit.co/ajax/bfasano84@gmail.com";
 
   var left = FOUNDING_TOTAL - FOUNDING_CLAIMED;
   document.getElementById("meter-fill").style.width = (FOUNDING_CLAIMED / FOUNDING_TOTAL * 100) + "%";
