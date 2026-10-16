@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Pelion</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="The Pelion is a training temple in Williamsville, NY: an iron floor, martial arts, yoga, breathwork and a recovery spa under one membership.">
+<meta property="og:title" content="The Pelion">
+<meta property="og:description" content="Iron, combat, yoga, breathwork and recovery under one roof. 8200 Main St, Williamsville, NY.">
+<meta property="og:image" content="img/exterior.jpg">
+<link rel="icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+<style>
+/* Layout: a dark nave. Full-bleed photo bands alternate with narrow text columns, gold used only for marks and calls to action. */
+:root {
+  --iron: #141312;        /* page ground: iron ore */
+  --iron-2: #1e1b19;      /* raised band */
+  --rust: #2b2420;        /* card / panel */
+  --gold: #c8a25a;        /* accent: the logo's gold */
+  --gold-soft: #e2c88f;
+  --wood: #8a5a35;
+  --text: #ece4d6;
+  --muted: #a69c8d;
+  --line: rgba(200, 162, 90, 0.28);
+  --display: "Cinzel", "Trajan Pro", Georgia, serif;
+  --body: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; animation: none !important; } }
+body { margin: 0; background: var(--iron); color: var(--text); font-family: var(--body); font-size: 17px; line-height: 1.6; }
+img { max-width: 100%; display: block; }
+a { color: var(--gold-soft); }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.wrap { max-width: 1160px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; letter-spacing: 0.06em; text-wrap: balance; margin: 0; line-height: 1.15; }
+h2 { font-size: clamp(1.7rem, 3.4vw, 2.6rem); }
+h3 { font-size: 1.15rem; letter-spacing: 0.08em; }
+p { margin: 0; }
+.eyebrow { font-family: var(--body); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+.lede { color: var(--muted); max-width: 60ch; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 26px; font-family: var(--body); font-weight: 600; font-size: 0.92rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--gold); color: var(--iron); background: var(--gold); cursor: pointer; transition: background 0.2s, color 0.2s; }
+.btn:hover { background: var(--gold-soft); }
+.btn.ghost { background: transparent; color: var(--gold-soft); }
+.btn.ghost:hover { background: rgba(200, 162, 90, 0.12); }
+
+/* Header */
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: rgba(20, 19, 18, 0.88); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--iron); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
+.brand { font-family: var(--display); font-weight: 700; letter-spacing: 0.18em; color: var(--gold); text-decoration: none; font-size: 1.05rem; }
+nav ul { list-style: none; display: flex; gap: 26px; margin: 0; padding: 0; }
+nav a { color: var(--text); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; }
+nav a:hover { color: var(--gold-soft); }
+.top .btn { padding: 10px 18px; font-size: 0.78rem; }
+@media (max-width: 860px) { nav { display: none; } }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
+.hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.42; }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,19,18,0.2) 0%, rgba(20,19,18,0.75) 70%, var(--iron) 100%); }
+.hero .wrap { position: relative; z-index: 1; display: grid; justify-items: center; text-align: center; gap: 22px; padding-block: clamp(56px, 9vw, 110px) clamp(56px, 8vw, 96px); }
+.hero-logo { width: min(400px, 74vw); filter: drop-shadow(0 8px 30px rgba(0,0,0,0.6)); }
+.hero h1 { font-size: clamp(1.25rem, 2.6vw, 1.75rem); letter-spacing: 0.32em; font-weight: 500; color: var(--text); }
+.hero p { color: var(--text); opacity: 0.85; max-width: 52ch; }
+.hero .actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+.hero .seats { font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-soft); }
+
+/* Disciplines */
+section { padding-block: clamp(64px, 9vw, 112px); }
+.section-head { display: grid; gap: 14px; margin-bottom: 44px; }
+.disciplines { display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; }
+.disc { position: relative; overflow: hidden; background: var(--rust); min-height: 380px; display: flex; flex-direction: column; justify-content: flex-end; }
+.disc img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
+.disc:hover img { transform: scale(1.04); }
+.disc::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,19,18,0) 30%, rgba(20,19,18,0.92) 100%); }
+.disc .txt { position: relative; z-index: 1; padding: 24px; display: grid; gap: 8px; }
+.disc .txt p { color: var(--muted); font-size: 0.95rem; }
+.disc.wide { grid-column: span 3; }
+.disc.third { grid-column: span 2; }
+@media (max-width: 860px) { .disciplines { grid-template-columns: 1fr; } .disc.wide, .disc.third { grid-column: auto; } .disc { min-height: 320px; } }
+
+/* Creed band */
+.creed { background: var(--iron-2); border-block: 1px solid var(--line); }
+.creed .wrap { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; }
+.creed img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+.creed ul { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 18px; }
+.creed li { display: grid; grid-template-columns: 52px 1fr; gap: 16px; align-items: baseline; border-top: 1px solid var(--line); padding-top: 18px; }
+.creed li strong { font-family: var(--display); color: var(--gold); font-size: 1.5rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.creed li span { color: var(--muted); }
+@media (max-width: 860px) { .creed .wrap { grid-template-columns: 1fr; } }
+
+/* Memberships */
+.tiers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.tier { background: var(--rust); border: 1px solid transparent; padding: 28px 24px; display: flex; flex-direction: column; gap: 16px; }
+.tier.anchor { border-color: var(--gold); background: linear-gradient(180deg, rgba(200,162,90,0.10), var(--rust) 60%); }
+.tier .tag { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); min-height: 1.2em; }
+.price { font-family: var(--display); font-size: 2.4rem; font-weight: 600; color: var(--text); font-variant-numeric: tabular-nums; line-height: 1; }
+.price small { font-family: var(--body); font-size: 0.85rem; color: var(--muted); letter-spacing: 0.04em; font-weight: 400; }
+.tier ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 0.95rem; color: var(--muted); }
+.tier li::before { content: "◆"; color: var(--gold); font-size: 0.6rem; margin-right: 10px; vertical-align: 2px; }
+.tier .btn { margin-top: auto; }
+.extras { margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.extra { border-top: 1px solid var(--line); padding-top: 16px; display: grid; gap: 4px; }
+.extra b { font-weight: 600; }
+.extra span { color: var(--muted); font-size: 0.95rem; }
+@media (max-width: 1000px) { .tiers { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) { .tiers, .extras { grid-template-columns: 1fr; } }
+
+/* Founding */
+.founding { position: relative; overflow: hidden; border-block: 1px solid var(--line); }
+.founding .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.22; }
+.founding .wrap { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.founding .offer { display: grid; gap: 18px; }
+.founding .big { font-family: var(--display); font-size: clamp(3rem, 7vw, 5rem); color: var(--gold); line-height: 1; font-variant-numeric: tabular-nums; }
+.meter { display: grid; gap: 8px; max-width: 420px; }
+.meter .bar { height: 6px; background: rgba(236,228,214,0.12); }
+.meter .bar i { display: block; height: 100%; width: 0%; background: var(--gold); }
+.meter small { color: var(--muted); font-size: 0.85rem; letter-spacing: 0.06em; }
+form { background: rgba(20,19,18,0.88); border: 1px solid var(--line); padding: 30px; display: grid; gap: 16px; }
+.field { display: grid; gap: 6px; }
+label { font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+input, select { font: inherit; color: var(--text); background: var(--iron-2); border: 1px solid rgba(236,228,214,0.18); padding: 12px 14px; border-radius: 0; width: 100%; }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.note { font-size: 0.85rem; color: var(--muted); }
+.form-msg { font-size: 0.95rem; color: var(--gold-soft); min-height: 1.4em; }
+@media (max-width: 860px) { .founding .wrap, .row2 { grid-template-columns: 1fr; } }
+
+/* Visit */
+.visit .wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
+.visit .col { display: grid; gap: 12px; align-content: start; }
+.hours { display: grid; grid-template-columns: auto 1fr; gap: 6px 22px; font-variant-numeric: tabular-nums; color: var(--muted); }
+.hours dt { color: var(--text); }
+.hours dd { margin: 0; }
+@media (max-width: 860px) { .visit .wrap { grid-template-columns: 1fr; } }
+
+footer { border-top: 1px solid var(--line); padding-block: 28px; color: var(--muted); font-size: 0.85rem; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">THE PELION</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#disciplines">Disciplines</a></li>
+        <li><a href="#memberships">Memberships</a></li>
+        <li><a href="#founding">Founding</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+    </nav>
+    <a class="btn" href="#founding">Reserve</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-label="The Pelion">
+    <img class="hero-img" src="img/exterior.jpg" alt="">
+    <div class="wrap">
+      <img class="hero-logo" src="img/logo.png" alt="The Pelion logo: a figure lifting a barbell beneath a mountain, framed in laurels">
+      <h1>A temple for strength and stillness</h1>
+      <p>Iron, combat, yoga, breathwork and a recovery spa, under one roof and one membership. Opening at 8200 Main Street, Williamsville.</p>
+      <div class="actions">
+        <a class="btn" href="#founding">Claim a founding spot</a>
+        <a class="btn ghost" href="#memberships">See memberships</a>
+      </div>
+      <p class="seats">200 founding memberships · $179 a month for life</p>
+    </div>
+  </section>
+
+  <section id="disciplines">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Five disciplines</span>
+        <h2>Train, fight, flow, breathe, recover</h2>
+        <p class="lede">Most people pay a gym, a dojo, a yoga studio and a recovery spa separately. At The Pelion it is one key and one monthly price.</p>
+      </div>
+      <div class="disciplines">
+        <article class="disc wide">
+          <img src="img/iron.jpg" alt="The iron floor with racks and benches under linear lights" loading="lazy">
+          <div class="txt"><span class="eyebrow">The Iron Floor</span><h3>Heavy iron, coached</h3><p>Racks, platforms, dumbbells to the heavy end and plate-loaded machines. Coached by the owner, a lifter for 24 years.</p></div>
+        </article>
+        <article class="disc wide">
+          <img src="img/combat.jpg" alt="Martial arts mat room with heavy bags" loading="lazy">
+          <div class="txt"><span class="eyebrow">The Mat Room</span><h3>Martial arts</h3><p>Kickboxing, striking and grappling on full tatami. Classes for adults, and a kids program for members' families.</p></div>
+        </article>
+        <article class="disc third">
+          <img src="img/yoga.jpg" alt="Yoga studio with warm wood floor" loading="lazy">
+          <div class="txt"><span class="eyebrow">The Studio</span><h3>Yoga</h3><p>Flow, power and restorative classes, capped so every mat has room.</p></div>
+        </article>
+        <article class="disc third">
+          <img src="img/breathwork.jpg" alt="Dim breathwork room with mats on the floor" loading="lazy">
+          <div class="txt"><span class="eyebrow">The Chamber</span><h3>Breathwork</h3><p>Guided breathwork and sound sessions in a dark, quiet room.</p></div>
+        </article>
+        <article class="disc third">
+          <img src="img/spa.jpg" alt="Recovery spa with cold plunge and sauna" loading="lazy">
+          <div class="txt"><span class="eyebrow">The Sanctum</span><h3>Recovery spa</h3><p>Sauna, cold plunge, red light and compression, booked by the session.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="creed">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Never crowded</span>
+        <h2 style="margin-top:14px">A limited membership, by design</h2>
+        <p class="lede" style="margin-top:16px">The Pelion is 13,000 square feet with a hard limit on members. When we reach it, new members join a waitlist.</p>
+        <ul>
+          <li><strong>600</strong><span>adult memberships, then a waitlist</span></li>
+          <li><strong>22</strong><span>mats per yoga class, 16 for breathwork</span></li>
+          <li><strong>16</strong><span>guests per recovery slot, booked in the app</span></li>
+        </ul>
+      </div>
+      <img src="img/wood-logo.jpg" alt="The Pelion mark carved into dark wood" loading="lazy">
+    </div>
+  </section>
+
+  <section id="memberships">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Memberships</span>
+        <h2>One price for everything, or start with one discipline</h2>
+        <p class="lede">Every membership includes the recovery spa. Month to month, no annual fee.</p>
+      </div>
+      <div class="tiers">
+        <article class="tier anchor">
+          <span class="tag">Most complete</span>
+          <h3>Elite All-Access</h3>
+          <div class="price">$199 <small>/ month</small></div>
+          <ul>
+            <li>Iron floor, mat room and studio</li>
+            <li>All martial arts, yoga and breathwork</li>
+            <li>Unlimited booked recovery</li>
+            <li>4 guest passes a month</li>
+            <li>VIP locker and towel service</li>
+          </ul>
+          <a class="btn" href="#founding">Reserve</a>
+        </article>
+        <article class="tier">
+          <span class="tag"></span>
+          <h3>Iron + Recovery</h3>
+          <div class="price">$149 <small>/ month</small></div>
+          <ul>
+            <li>The iron floor</li>
+            <li>4 recovery sessions a month</li>
+            <li>1 guest pass a month</li>
+          </ul>
+          <a class="btn ghost" href="#founding">Reserve</a>
+        </article>
+        <article class="tier">
+          <span class="tag"></span>
+          <h3>Flow + Recovery</h3>
+          <div class="price">$159 <small>/ month</small></div>
+          <ul>
+            <li>Yoga and breathwork classes</li>
+            <li>4 recovery sessions a month</li>
+            <li>1 guest pass a month</li>
+          </ul>
+          <a class="btn ghost" href="#founding">Reserve</a>
+        </article>
+        <article class="tier">
+          <span class="tag"></span>
+          <h3>Combat + Recovery</h3>
+          <div class="price">$169 <small>/ month</small></div>
+          <ul>
+            <li>All martial arts classes</li>
+            <li>Conditioning floor</li>
+            <li>4 recovery sessions a month</li>
+          </ul>
+          <a class="btn ghost" href="#founding">Reserve</a>
+        </article>
+      </div>
+      <div class="extras">
+        <div class="extra"><b>Recovery Club · $149 / month</b><span>Unlimited booked sauna, cold plunge, red light and compression.</span></div>
+        <div class="extra"><b>Kids Martial Arts · $129 / month</b><span>Two classes a week. $99 for a member's child.</span></div>
+        <div class="extra"><b>Day pass · $35, or $45 with recovery</b><span>Personal training from $85 a session.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="founding" id="founding">
+    <img class="bg" src="img/yoga-dark.jpg" alt="">
+    <div class="wrap">
+      <div class="offer">
+        <span class="eyebrow">Founding membership</span>
+        <div class="big">$179</div>
+        <h2>Elite All-Access, locked for life</h2>
+        <p class="lede">The first 200 members get everything in Elite for $20 a month less, permanently. Founding memberships carry a 12-month commitment and close on opening day.</p>
+        <div class="meter" aria-live="polite">
+          <div class="bar"><i id="meter-fill"></i></div>
+          <small id="meter-text">200 founding spots available</small>
+        </div>
+      </div>
+      <form id="reserve" novalidate>
+        <h3>Reserve your spot</h3>
+        <p class="note">No charge today. We'll contact you before opening to confirm.</p>
+        <div class="row2">
+          <div class="field"><label for="f-first">First name</label><input id="f-first" name="first" autocomplete="given-name" required></div>
+          <div class="field"><label for="f-last">Last name</label><input id="f-last" name="last" autocomplete="family-name" required></div>
+        </div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+        <div class="field">
+          <label for="f-tier">Membership</label>
+          <select id="f-tier" name="tier">
+            <option>Founding Elite · $179</option>
+            <option>Elite All-Access · $199</option>
+            <option>Iron + Recovery · $149</option>
+            <option>Flow + Recovery · $159</option>
+            <option>Combat + Recovery · $169</option>
+            <option>Recovery Club · $149</option>
+            <option>Kids Martial Arts · $129</option>
+          </select>
+        </div>
+        <button class="btn" type="submit">Reserve my spot</button>
+        <p class="form-msg" id="form-msg" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="visit" id="visit">
+    <div class="wrap">
+      <div class="col">
+        <span class="eyebrow">Find us</span>
+        <h3>8200 Main Street<br>Williamsville, NY 14221</h3>
+        <p class="lede">On the Main and Transit corridor, with parking out front.</p>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=8200+Main+St+Williamsville+NY+14221" target="_blank" rel="noopener">Open in Maps</a>
+      </div>
+      <div class="col">
+        <span class="eyebrow">Hours</span>
+        <dl class="hours">
+          <dt>Monday – Friday</dt><dd>7:00 am – 8:30 pm</dd>
+          <dt>Saturday</dt><dd>8:00 am – 12:00 pm</dd>
+          <dt>Sunday</dt><dd>Closed</dd>
+        </dl>
+      </div>
+      <div class="col">
+        <span class="eyebrow">Family owned</span>
+        <p class="lede">The Pelion is run by the Fasano family. Bartolomeo Fasano coaches the iron floor and holds a black belt in kickboxing.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> The Pelion · Williamsville, NY</span>
+    <span>Strength · Discipline · Stillness</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Founding spots claimed so far. Update this number as reservations come in.
+  var FOUNDING_TOTAL = 200, FOUNDING_CLAIMED = 0;
+  // Where reservations are sent. Set to a form endpoint (for example Formspree) once the site is live.
+  var FORM_ENDPOINT = "";
+
+  var left = FOUNDING_TOTAL - FOUNDING_CLAIMED;
+  document.getElementById("meter-fill").style.width = (FOUNDING_CLAIMED / FOUNDING_TOTAL * 100) + "%";
+  document.getElementById("meter-text").textContent = left + " of " + FOUNDING_TOTAL + " founding spots available";
+  document.getElementById("yr").textContent = new Date().getFullYear();
+
+  var form = document.getElementById("reserve"), msg = document.getElementById("form-msg");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var first = form.first.value.trim(), last = form.last.value.trim(), email = form.email.value.trim();
+    if (!first || !last) { msg.textContent = "Add your first and last name."; return; }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { msg.textContent = "Enter a valid email so we can reach you."; return; }
+    if (!FORM_ENDPOINT) { msg.textContent = "Reservations open soon. This form isn't connected yet."; return; }
+    msg.textContent = "Sending…";
+    fetch(FORM_ENDPOINT, { method: "POST", headers: { "Accept": "application/json" }, body: new FormData(form) })
+      .then(function (r) {
+        if (!r.ok) throw new Error();
+        form.reset();
+        msg.textContent = "Reserved, " + first + ". We'll be in touch before opening.";
+      })
+      .catch(function () { msg.textContent = "That didn't go through. Try again, or email us."; });
+  });
+})();
+</script>
+</body>
+</html>
