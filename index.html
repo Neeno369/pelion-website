@@ -4,11 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The Pelion</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="The Pelion is a training temple in Williamsville, NY: an iron floor, martial arts, yoga, breathwork and a recovery spa under one membership.">
+<meta name="description" content="The Pelion is a training sanctuary in Williamsville, NY: strength, martial arts, yoga, breathwork, mental conditioning and a recovery spa under one membership.">
 <meta property="og:title" content="The Pelion">
-<meta property="og:description" content="Iron, combat, yoga, breathwork and recovery under one roof. 8200 Main St, Williamsville, NY.">
-<meta property="og:image" content="https://www.thepelion.com/img/exterior.jpg">
+<meta property="og:description" content="More than a gym. A higher standard. Founding pre-sale open at 8200 Main St, Williamsville, NY.">
+<meta property="og:image" content="https://www.thepelion.com/img/entrance.jpg">
 <meta property="og:url" content="https://www.thepelion.com/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -16,381 +15,785 @@
 <link rel="icon" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
 <style>
-/* Layout: a dark nave. Full-bleed photo bands alternate with narrow text columns, gold used only for marks and calls to action. */
-:root {
-  --iron: #141312;        /* page ground: iron ore */
-  --iron-2: #1e1b19;      /* raised band */
-  --rust: #2b2420;        /* card / panel */
-  --gold: #c8a25a;        /* accent: the logo's gold */
-  --gold-soft: #e2c88f;
-  --wood: #8a5a35;
-  --text: #ece4d6;
-  --muted: #a69c8d;
-  --line: rgba(200, 162, 90, 0.28);
-  --display: "Cinzel", "Trajan Pro", Georgia, serif;
-  --body: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
-  color-scheme: dark;
+/* Layout: a temple at night. Bronze arches and the Pelion ridge line frame every scene; one committed dark world. */
+:root{
+  --obsidian:#0d0c0a;      /* page ground, warm black stone */
+  --basalt:#17150f;        /* raised surfaces */
+  --ash:#2a2620;           /* hairlines */
+  --bone:#ece4d3;          /* primary text, marble */
+  --stone:#a59c8b;         /* secondary text */
+  --bronze:#c9a46a;        /* brand accent, from the crest */
+  --bronze-deep:#9f7c49;   /* crest gold */
+  --ice:#9cc3cf;           /* cold plunge, used once */
+  --f-display:"Cinzel","Trajan Pro","Times New Roman",serif;
+  --f-voice:"Cormorant Garamond","Garamond","Georgia",serif;
+  --f-body:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+  --gutter:max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r:max(16px, env(safe-area-inset-right, 0px));
+  --ease:cubic-bezier(.2,.7,.1,1);
+  color-scheme:dark;
 }
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; animation: none !important; } }
-body { margin: 0; background: var(--iron); color: var(--text); font-family: var(--body); font-size: 17px; line-height: 1.6; }
-img { max-width: 100%; display: block; }
-a { color: var(--gold-soft); }
-a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
-.wrap { max-width: 1160px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
-h1, h2, h3 { font-family: var(--display); font-weight: 600; letter-spacing: 0.06em; text-wrap: balance; margin: 0; line-height: 1.15; }
-h2 { font-size: clamp(1.7rem, 3.4vw, 2.6rem); }
-h3 { font-size: 1.15rem; letter-spacing: 0.08em; }
-p { margin: 0; }
-.eyebrow { font-family: var(--body); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
-.lede { color: var(--muted); max-width: 60ch; }
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 26px; font-family: var(--body); font-weight: 600; font-size: 0.92rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--gold); color: var(--iron); background: var(--gold); cursor: pointer; transition: background 0.2s, color 0.2s; }
-.btn:hover { background: var(--gold-soft); }
-.btn.ghost { background: transparent; color: var(--gold-soft); }
-.btn.ghost:hover { background: rgba(200, 162, 90, 0.12); }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--obsidian)}
+body{margin:0;background:var(--obsidian);color:var(--bone);font:400 17px/1.6 var(--f-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--obsidian)}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--bronze);outline-offset:3px}
+.wrap{max-width:1240px;margin-inline:auto;padding-left:var(--gutter);padding-right:var(--gutter-r)}
+h1,h2,h3{font-family:var(--f-display);font-weight:600;letter-spacing:.02em;text-wrap:balance;margin:0;line-height:1.05}
+p{margin:0}
+.eyebrow{font:600 12px/1 var(--f-body);letter-spacing:.28em;text-transform:uppercase;color:var(--bronze);display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+.voice{font-family:var(--f-voice);font-style:italic;font-weight:400;color:var(--bronze);letter-spacing:0}
+.lede{color:var(--stone);max-width:58ch;font-size:clamp(16px,1.3vw,18px)}
+section{position:relative}
+.band{padding-block:clamp(80px,11vw,150px)}
 
-/* Header */
-header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: rgba(20, 19, 18, 0.88); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
-body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--iron); }
-.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
-.brand { font-family: var(--display); font-weight: 700; letter-spacing: 0.18em; color: var(--gold); text-decoration: none; font-size: 1.05rem; }
-nav ul { list-style: none; display: flex; gap: 26px; margin: 0; padding: 0; }
-nav a { color: var(--text); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; }
-nav a:hover { color: var(--gold-soft); }
-.top .btn { padding: 10px 18px; font-size: 0.78rem; }
-@media (max-width: 860px) { nav { display: none; } }
+/* buttons */
+.btn{--mx:0px;--my:0px;display:inline-flex;align-items:center;gap:12px;padding:17px 26px;border-radius:2px;font:700 13px/1 var(--f-body);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;border:1px solid var(--bronze);cursor:pointer;transition:background .35s var(--ease),color .35s var(--ease),transform .35s var(--ease);transform:translate(var(--mx),var(--my))}
+.btn-solid{background:var(--bronze);color:var(--obsidian)}
+.btn-solid:hover{background:var(--bone);border-color:var(--bone)}
+.btn-ghost{background:transparent;color:var(--bone);border-color:var(--ash)}
+.btn-ghost:hover{border-color:var(--bronze);color:var(--bronze)}
+.btn svg{width:16px;height:16px;transition:transform .35s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
 
-/* Hero */
-.hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
-.hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.42; }
-.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,19,18,0.2) 0%, rgba(20,19,18,0.75) 70%, var(--iron) 100%); }
-.hero .wrap { position: relative; z-index: 1; display: grid; justify-items: center; text-align: center; gap: 22px; padding-block: clamp(56px, 9vw, 110px) clamp(56px, 8vw, 96px); }
-.hero-logo { width: min(400px, 74vw); filter: drop-shadow(0 8px 30px rgba(0,0,0,0.6)); }
-.hero h1 { font-size: clamp(1.25rem, 2.6vw, 1.75rem); letter-spacing: 0.32em; font-weight: 500; color: var(--text); }
-.hero p { color: var(--text); opacity: 0.85; max-width: 52ch; }
-.hero .actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
-.hero .seats { font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-soft); }
+/* announcement + nav */
+.announce{background:var(--bronze-deep);color:var(--obsidian);font:600 12.5px/1.3 var(--f-body);letter-spacing:.06em;text-align:center;padding:10px var(--gutter-r) 10px var(--gutter)}
+.announce b{font-weight:800}
+.announce a{text-decoration:underline;text-underline-offset:3px}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+.nav.solid{background:color-mix(in srgb,var(--obsidian) 82%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--ash)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:74px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:40px;height:auto}
+.brand span{font:700 18px/1 var(--f-display);letter-spacing:.16em}
+.links{display:flex;gap:30px;list-style:none;margin:0;padding:0}
+.links a{text-decoration:none;font:500 13px/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--stone);transition:color .3s}
+.links a:hover{color:var(--bone)}
+.nav .btn{padding:13px 18px;font-size:12px}
+@media (max-width:900px){.links{display:none}}
+@media (max-width:480px){.brand span{display:none}.nav .btn{padding:12px 14px;letter-spacing:.12em}}
 
-/* Disciplines */
-section { padding-block: clamp(64px, 9vw, 112px); }
-.section-head { display: grid; gap: 14px; margin-bottom: 44px; }
-.disciplines { display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; }
-.disc { position: relative; overflow: hidden; background: var(--rust); min-height: 380px; display: flex; flex-direction: column; justify-content: flex-end; }
-.disc img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
-.disc:hover img { transform: scale(1.04); }
-.disc::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,19,18,0) 30%, rgba(20,19,18,0.92) 100%); }
-.disc .txt { position: relative; z-index: 1; padding: 24px; display: grid; gap: 8px; }
-.disc .txt p { color: var(--muted); font-size: 0.95rem; }
-.disc.wide { grid-column: span 3; }
-.disc.third { grid-column: span 2; }
-@media (max-width: 860px) { .disciplines { grid-template-columns: 1fr; } .disc.wide, .disc.third { grid-column: auto; } .disc { min-height: 320px; } }
+/* hero */
+.hero{position:relative;overflow:hidden;padding-block:clamp(48px,7vw,96px) 0;isolation:isolate}
+#embers{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(60% 55% at 72% 35%,rgba(201,164,106,.16),transparent 70%),radial-gradient(40% 40% at 10% 90%,rgba(201,164,106,.07),transparent 70%)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,80px);align-items:center}
+.hero-copy{min-width:0;display:grid;gap:28px}
+.hero h1{font-size:clamp(44px,7.4vw,108px);font-weight:700;line-height:.95;letter-spacing:.01em}
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .line>span{display:block;animation:rise 1.2s var(--ease) both}
+.hero h1 .line:nth-child(2)>span{animation-delay:.12s}
+.hero h1 .line:nth-child(3)>span{animation-delay:.24s}
+.hero h1 .voice{font-weight:400;font-size:1.04em;letter-spacing:-.01em}
+@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
+.fade-in{animation:fadeup 1.1s var(--ease) .5s both}
+@keyframes fadeup{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px}
+.assure{display:flex;flex-wrap:wrap;gap:10px 26px;list-style:none;padding:0;margin:0;color:var(--stone);font-size:14px}
+.assure li{display:flex;align-items:center;gap:8px}
+.assure svg{width:15px;height:15px;color:var(--bronze);flex:none}
 
-/* Creed band */
-.creed { background: var(--iron-2); border-block: 1px solid var(--line); }
-.creed .wrap { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; }
-.creed img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
-.creed ul { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 18px; }
-.creed li { display: grid; grid-template-columns: 52px 1fr; gap: 16px; align-items: baseline; border-top: 1px solid var(--line); padding-top: 18px; }
-.creed li strong { font-family: var(--display); color: var(--gold); font-size: 1.5rem; font-weight: 600; font-variant-numeric: tabular-nums; }
-.creed li span { color: var(--muted); }
-@media (max-width: 860px) { .creed .wrap { grid-template-columns: 1fr; } }
+.arch{position:relative;justify-self:end;width:min(100%,460px);animation:fadeup 1.4s var(--ease) .2s both}
+.arch-frame{position:relative;aspect-ratio:3/4;border-radius:999px 999px 4px 4px;overflow:hidden;max-width:100%}
+.arch-frame img{width:100%;height:118%;object-fit:cover;transform:translateY(var(--py,0px)) scale(1.04);will-change:transform}
+.arch-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(13,12,10,.85))}
+.arch-line{position:absolute;inset:-14px;border:1px solid var(--bronze);border-bottom:0;border-radius:999px 999px 0 0;opacity:.55;pointer-events:none}
+.arch-tag{position:absolute;left:22px;right:22px;bottom:22px;z-index:2;display:flex;justify-content:space-between;align-items:end;gap:12px}
+.arch-tag small{font:600 11px/1.3 var(--f-body);letter-spacing:.22em;text-transform:uppercase;color:var(--bronze)}
+.arch-tag strong{display:block;font:600 22px/1.1 var(--f-display);margin-top:6px}
+.seal{width:86px;height:86px;flex:none;animation:spin 28s linear infinite}
+.seal text{font:700 9.5px var(--f-body);letter-spacing:.32em;fill:var(--bone)}
+@keyframes spin{to{transform:rotate(360deg)}}
 
-/* Memberships */
-.tiers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-.tier { background: var(--rust); border: 1px solid transparent; padding: 28px 24px; display: flex; flex-direction: column; gap: 16px; }
-.tier.anchor { border-color: var(--gold); background: linear-gradient(180deg, rgba(200,162,90,0.10), var(--rust) 60%); }
-.tier .tag { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); min-height: 1.2em; }
-.price { font-family: var(--display); font-size: 2.4rem; font-weight: 600; color: var(--text); font-variant-numeric: tabular-nums; line-height: 1; }
-.price small { font-family: var(--body); font-size: 0.85rem; color: var(--muted); letter-spacing: 0.04em; font-weight: 400; }
-.tier ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 0.95rem; color: var(--muted); }
-.tier li::before { content: "◆"; color: var(--gold); font-size: 0.6rem; margin-right: 10px; vertical-align: 2px; }
-.tier .btn { margin-top: auto; }
-.extras { margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.extra { border-top: 1px solid var(--line); padding-top: 16px; display: grid; gap: 4px; }
-.extra b { font-weight: 600; }
-.extra span { color: var(--muted); font-size: 0.95rem; }
-@media (max-width: 1000px) { .tiers { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 620px) { .tiers, .extras { grid-template-columns: 1fr; } }
+.ridge{display:block;width:100%;height:clamp(70px,10vw,140px);margin-top:clamp(40px,6vw,72px)}
+.ridge path{fill:none;stroke:var(--bronze);stroke-width:1.2;vector-effect:non-scaling-stroke;stroke-dasharray:3000;stroke-dashoffset:3000;animation:draw 3.2s var(--ease) .4s forwards}
+.ridge .fill{fill:var(--basalt);stroke:none;animation:none;opacity:.6}
+@keyframes draw{to{stroke-dashoffset:0}}
 
-/* Founding */
-.founding { position: relative; overflow: hidden; border-block: 1px solid var(--line); }
-.founding .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.22; }
-.founding .wrap { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-.founding .offer { display: grid; gap: 18px; }
-.founding .big { font-family: var(--display); font-size: clamp(3rem, 7vw, 5rem); color: var(--gold); line-height: 1; font-variant-numeric: tabular-nums; }
-.meter { display: grid; gap: 8px; max-width: 420px; }
-.meter .bar { height: 6px; background: rgba(236,228,214,0.12); }
-.meter .bar i { display: block; height: 100%; width: 0%; background: var(--gold); }
-.meter small { color: var(--muted); font-size: 0.85rem; letter-spacing: 0.06em; }
-form { background: rgba(20,19,18,0.88); border: 1px solid var(--line); padding: 30px; display: grid; gap: 16px; }
-.field { display: grid; gap: 6px; }
-label { font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
-input, select { font: inherit; color: var(--text); background: var(--iron-2); border: 1px solid rgba(236,228,214,0.18); padding: 12px 14px; border-radius: 0; width: 100%; }
-.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.note { font-size: 0.85rem; color: var(--muted); }
-.form-msg { font-size: 0.95rem; color: var(--gold-soft); min-height: 1.4em; }
-@media (max-width: 860px) { .founding .wrap, .row2 { grid-template-columns: 1fr; } }
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr}
+  .arch{justify-self:center;width:min(100%,380px)}
+}
 
-/* Visit */
-.visit .wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
-.visit .col { display: grid; gap: 12px; align-content: start; }
-.hours { display: grid; grid-template-columns: auto 1fr; gap: 6px 22px; font-variant-numeric: tabular-nums; color: var(--muted); }
-.hours dt { color: var(--text); }
-.hours dd { margin: 0; }
-@media (max-width: 860px) { .visit .wrap { grid-template-columns: 1fr; } }
+/* marquee */
+.marquee{border-block:1px solid var(--ash);overflow:hidden;background:var(--basalt)}
+.marquee-track{display:flex;width:max-content;animation:slide 38s linear infinite}
+.marquee span{font:600 clamp(18px,2vw,26px)/1 var(--f-display);letter-spacing:.14em;padding:22px 0;white-space:nowrap;display:flex;align-items:center}
+.marquee span::after{content:"";width:7px;height:7px;transform:rotate(45deg);background:var(--bronze);margin-inline:34px}
+@keyframes slide{to{transform:translateX(-50%)}}
 
-footer { border-top: 1px solid var(--line); padding-block: 28px; color: var(--muted); font-size: 0.85rem; }
-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+/* origin */
+.origin-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,6vw,96px);align-items:center}
+.crest{position:relative;display:grid;place-items:center;aspect-ratio:1;max-width:420px;width:100%}
+.crest img{width:72%;filter:drop-shadow(0 0 40px rgba(201,164,106,.25));transform:translateY(var(--py,0px))}
+.crest::before{content:"";position:absolute;inset:0;border:1px solid var(--ash);border-radius:50%}
+.crest::after{content:"";position:absolute;inset:9%;border:1px dashed rgba(201,164,106,.3);border-radius:50%;animation:spin 80s linear infinite}
+.origin-copy{min-width:0;display:grid;gap:30px}
+.scrub{font:500 clamp(24px,3vw,40px)/1.28 var(--f-display);letter-spacing:.01em}
+.scrub .w{opacity:.2;transition:opacity .25s linear}
+.scrub .w.on{opacity:1}
+.scrub em{font-family:var(--f-voice);font-weight:500;color:var(--bronze);font-size:1.12em}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ash);border:1px solid var(--ash)}
+.facts div{background:var(--obsidian);padding:20px 18px}
+.facts b{display:block;font:600 clamp(28px,3vw,40px)/1 var(--f-display);color:var(--bronze);font-variant-numeric:tabular-nums}
+.facts div > span{display:block;margin-top:8px;font-size:13px;color:var(--stone);letter-spacing:.04em}
+@media (max-width:860px){.origin-grid{grid-template-columns:1fr}.crest{max-width:280px;margin-inline:auto}}
+
+/* pillars */
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px 60px;flex-wrap:wrap;margin-bottom:clamp(36px,5vw,64px)}
+.head h2{font-size:clamp(34px,5vw,68px)}
+.head .lede{max-width:44ch}
+.pillars{display:flex;gap:10px;height:clamp(520px,62vw,640px)}
+.pillar{position:relative;flex:1;min-width:0;overflow:hidden;border:0;padding:0;margin:0;background:var(--basalt);color:var(--bone);text-align:left;cursor:pointer;border-radius:2px;transition:flex .8s var(--ease);font:inherit}
+.pillar.on{flex:5.2;cursor:default}
+.pillar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.55) brightness(.55);transform:scale(1.12);transition:filter .8s var(--ease),transform 1.4s var(--ease)}
+.pillar.on img,.pillar:hover img{filter:grayscale(0) brightness(.72);transform:scale(1)}
+.pillar::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.1) 30%,rgba(13,12,10,.92))}
+.pillar .num{position:absolute;top:20px;left:20px;z-index:2;font:600 12px/1 var(--f-body);letter-spacing:.2em;color:var(--bronze)}
+.pillar .vlabel{position:absolute;left:50%;bottom:28px;z-index:2;writing-mode:vertical-rl;transform:translateX(-50%) rotate(180deg);font:600 18px/1 var(--f-display);letter-spacing:.2em;white-space:nowrap;transition:opacity .4s}
+.pillar.on .vlabel{opacity:0}
+.pillar .body{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:clamp(22px,3vw,40px);display:grid;gap:14px;opacity:0;transform:translateY(20px);transition:opacity .5s,transform .7s var(--ease);pointer-events:none;max-width:600px}
+.pillar.on .body{opacity:1;transform:none;transition-delay:.3s}
+.pillar h3{font-size:clamp(28px,3.4vw,46px)}
+.pillar p{color:#d5ccbb;max-width:46ch}
+.pillar ul{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:6px 0 0;padding:0}
+.pillar li{font:600 11.5px/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(201,164,106,.5);color:var(--bronze);padding:9px 12px;border-radius:40px;background:rgba(13,12,10,.4)}
+.pillar.ice li{border-color:rgba(156,195,207,.55);color:var(--ice)}
+@media (max-width:760px){
+  .pillars{flex-direction:column;height:auto}
+  .pillar{flex:none;height:86px;transition:height .7s var(--ease)}
+  .pillar.on{flex:none;height:440px}
+  .pillar .vlabel{writing-mode:horizontal-tb;transform:none;left:64px;bottom:auto;top:32px;font-size:17px}
+  .pillar .num{top:34px}
+}
+
+/* value calculator */
+.value{background:var(--basalt);border-block:1px solid var(--ash)}
+.value-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px);align-items:start}
+.value h2{font-size:clamp(32px,4.4vw,58px)}
+.value-copy{display:grid;gap:24px;min-width:0}
+.calc{border:1px solid var(--ash);background:var(--obsidian);padding:clamp(22px,3vw,36px);display:grid;gap:22px;min-width:0}
+.calc-title{font:600 12px/1 var(--f-body);letter-spacing:.24em;text-transform:uppercase;color:var(--stone)}
+.opts{display:grid;gap:8px}
+.opt{display:grid;grid-template-columns:22px 1fr auto;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--ash);cursor:pointer;transition:border-color .3s,background .3s;user-select:none}
+.opt input{appearance:none;-webkit-appearance:none;width:20px;height:20px;border:1px solid var(--stone);margin:0;display:grid;place-items:center;border-radius:2px;cursor:pointer}
+.opt input:checked{background:var(--bronze);border-color:var(--bronze)}
+.opt input:checked::after{content:"";width:9px;height:5px;border-left:2px solid var(--obsidian);border-bottom:2px solid var(--obsidian);transform:rotate(-45deg) translate(1px,-1px)}
+.opt:has(input:checked){border-color:rgba(201,164,106,.55);background:rgba(201,164,106,.05)}
+.opt b{font-weight:600;font-size:15.5px}
+.opt small{display:block;color:var(--stone);font-size:13px}
+.opt .amt{font-variant-numeric:tabular-nums;color:var(--stone);font-size:15px}
+.totals{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ash);border:1px solid var(--ash)}
+.totals div{background:var(--obsidian);padding:18px}
+.totals span{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--stone)}
+.totals b{display:block;margin-top:8px;font:600 clamp(26px,3vw,36px)/1 var(--f-display);font-variant-numeric:tabular-nums}
+.totals .strike b{color:var(--stone);text-decoration:line-through;text-decoration-thickness:1px}
+.totals .ours b{color:var(--bronze)}
+.save{font:500 clamp(20px,2.2vw,26px)/1.3 var(--f-voice);font-style:italic;color:var(--bone)}
+.save b{font-family:var(--f-display);font-style:normal;color:var(--bronze);font-variant-numeric:tabular-nums}
+.fine{font-size:12.5px;color:var(--stone)}
+@media (max-width:860px){.value-grid{grid-template-columns:1fr}}
+
+/* space gallery */
+.strip{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:18px;cursor:grab;scrollbar-width:thin;scrollbar-color:var(--bronze-deep) transparent;padding-left:var(--gutter);padding-right:var(--gutter-r);scroll-padding-left:var(--gutter)}
+.strip.drag{cursor:grabbing;scroll-snap-type:none}
+.strip figure{margin:0;flex:none;width:min(78vw,360px);scroll-snap-align:start;display:grid;gap:14px}
+.strip figure.wide{width:min(88vw,720px)}
+.strip .ph{overflow:hidden;aspect-ratio:3/4;border-radius:2px;background:var(--basalt)}
+.strip figure.wide .ph{aspect-ratio:auto;height:100%;max-height:480px}
+.strip .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease);pointer-events:none}
+.strip figure:hover img{transform:scale(1.05)}
+.strip figcaption{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--stone)}
+.strip figcaption b{font:600 15px/1.2 var(--f-display);letter-spacing:.08em;color:var(--bone)}
+.strip-max{max-width:calc(1240px + 2 * 16px);margin-inline:auto}
+.disclaim{margin-top:18px;font-size:12.5px;color:var(--stone)}
+
+/* pricing */
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.tier{--x:50%;--y:0%;position:relative;border:1px solid var(--ash);background:radial-gradient(420px circle at var(--x) var(--y),rgba(201,164,106,.11),transparent 60%),var(--basalt);padding:clamp(24px,2.6vw,36px);display:flex;flex-direction:column;gap:22px;min-width:0;transition:border-color .4s,transform .5s var(--ease)}
+.tier:hover{border-color:rgba(201,164,106,.5);transform:translateY(-4px)}
+.tier.hero-tier{border-color:var(--bronze);background:radial-gradient(420px circle at var(--x) var(--y),rgba(201,164,106,.2),transparent 60%),linear-gradient(180deg,#221d14,var(--basalt))}
+.flag{position:absolute;top:-1px;right:24px;transform:translateY(-50%);background:var(--bronze);color:var(--obsidian);font:800 11px/1 var(--f-body);letter-spacing:.18em;text-transform:uppercase;padding:8px 12px}
+.tier .kicker{font:600 12px/1 var(--f-body);letter-spacing:.22em;text-transform:uppercase;color:var(--bronze)}
+.tier h3{font-size:clamp(24px,2.3vw,30px);margin-top:10px}
+.price{display:flex;align-items:baseline;gap:8px}
+.price b{font:600 clamp(52px,5.4vw,72px)/.9 var(--f-display);font-variant-numeric:tabular-nums}
+.price > span{color:var(--stone);font-size:15px}
+.terms{font-size:14px;color:var(--stone);margin-top:-10px}
+.badge-save{align-self:flex-start;font:700 12px/1 var(--f-body);letter-spacing:.08em;padding:9px 12px;border-radius:30px;background:rgba(201,164,106,.12);color:var(--bronze);border:1px solid rgba(201,164,106,.35)}
+.incl{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:15px}
+.incl li{display:grid;grid-template-columns:18px 1fr;gap:10px;align-items:start}
+.incl svg{width:16px;height:16px;margin-top:4px;color:var(--bronze)}
+.spots{display:grid;gap:8px;font-size:13px;color:var(--stone)}
+.spots .row{display:flex;justify-content:space-between;font-variant-numeric:tabular-nums}
+.spots .row b{color:var(--bone)}
+.bar{height:4px;background:var(--ash);border-radius:4px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--bronze-deep),var(--bronze));transition:width 1.6s var(--ease)}
+.tier .btn{justify-content:center;margin-top:auto}
+.deposit{margin-top:clamp(28px,4vw,44px);display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;border:1px dashed rgba(201,164,106,.45);padding:22px 26px}
+.deposit .big{font:600 44px/1 var(--f-display);color:var(--bronze)}
+.deposit p{color:var(--stone);max-width:62ch}
+.deposit p b{color:var(--bone)}
+@media (max-width:980px){.tiers{grid-template-columns:1fr;max-width:560px;margin-inline:auto}.tier.hero-tier{order:-1}}
+@media (max-width:700px){.deposit{grid-template-columns:1fr;text-align:left}}
+
+/* how it works */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;counter-reset:s;border-top:1px solid var(--ash)}
+.step{padding:32px 28px 0 0;display:grid;gap:12px;position:relative}
+.step::before{counter-increment:s;content:"Step " counter(s);font:600 12px/1 var(--f-body);letter-spacing:.22em;text-transform:uppercase;color:var(--bronze)}
+.step::after{content:"";position:absolute;top:-4px;left:0;width:7px;height:7px;background:var(--bronze);transform:rotate(45deg)}
+.step h3{font-size:clamp(22px,2.2vw,28px)}
+.step p{color:var(--stone);max-width:36ch}
+@media (max-width:760px){.steps{grid-template-columns:1fr;gap:34px}}
+
+/* coaches */
+.coaches{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.coach{display:grid;gap:16px;align-content:start;min-width:0}
+.coach .portrait{aspect-ratio:4/5;border-radius:999px 999px 2px 2px;border:1px solid var(--ash);background:radial-gradient(80% 60% at 50% 30%,rgba(201,164,106,.18),transparent 70%),var(--basalt);display:grid;place-items:center;overflow:hidden;position:relative;max-width:100%}
+.coach .portrait span{font:600 clamp(40px,4.4vw,64px)/1 var(--f-display);color:var(--bronze);letter-spacing:.06em}
+.coach.tba .portrait span{font:italic 500 22px/1.2 var(--f-voice);letter-spacing:0;color:var(--stone);text-align:center;padding:0 20px}
+.coach small{font:600 11.5px/1.3 var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:var(--bronze)}
+.coach h3{font-size:21px;margin-top:6px}
+.coach p{color:var(--stone);font-size:15px}
+@media (max-width:980px){.coaches{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.coaches{grid-template-columns:1fr}}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(32px,6vw,96px)}
+.faq-grid h2{font-size:clamp(32px,4vw,52px)}
+details{border-bottom:1px solid var(--ash)}
+details:first-child{border-top:1px solid var(--ash)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:22px 0;font:600 17px/1.35 var(--f-body)}
+summary::-webkit-details-marker{display:none}
+summary i{flex:none;width:14px;height:14px;position:relative;margin-top:5px}
+summary i::before,summary i::after{content:"";position:absolute;left:0;right:0;top:6px;height:1.5px;background:var(--bronze);transition:transform .4s var(--ease)}
+summary i::after{transform:rotate(90deg)}
+details[open] summary i::after{transform:rotate(0)}
+details p{color:var(--stone);padding:0 30px 24px 0;max-width:64ch}
+@media (max-width:860px){.faq-grid{grid-template-columns:1fr}}
+
+/* final cta */
+.final{overflow:hidden;isolation:isolate;text-align:center}
+.final .bg{position:absolute;inset:0;z-index:-1}
+.final .bg img{width:100%;height:120%;object-fit:cover;opacity:.32;transform:translateY(var(--py,0px))}
+.final .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--obsidian),rgba(13,12,10,.55) 40%,var(--obsidian))}
+.final h2{font-size:clamp(40px,7vw,96px);font-weight:700}
+.final .lede{margin:22px auto 0}
+.final .hero-ctas{justify-content:center;margin-top:34px}
+.list-form{margin:44px auto 0;max-width:760px;display:grid;grid-template-columns:1fr 1fr;gap:10px;text-align:left}
+.list-form label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.list-form input,.list-form select{width:100%;min-width:0;background:rgba(13,12,10,.7);border:1px solid var(--ash);color:var(--bone);font:400 15px var(--f-body);padding:16px;border-radius:2px}
+.list-form input::placeholder{color:var(--stone)}
+.list-form select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--bronze) 50%),linear-gradient(135deg,var(--bronze) 50%,transparent 50%);background-position:calc(100% - 22px) 50%,calc(100% - 16px) 50%;background-size:6px 6px;background-repeat:no-repeat;padding-right:40px}
+.list-form .btn{grid-column:1/-1}
+.list-form input:focus,.list-form select:focus{outline:none;border-color:var(--bronze)}
+.list-form .btn{justify-content:center}
+.form-note{margin-top:12px;font-size:13px;color:var(--stone)}
+.thanks{margin:56px auto 0;max-width:560px;border:1px solid var(--bronze);padding:26px;font:500 22px/1.35 var(--f-voice);font-style:italic}
+@media (max-width:760px){.list-form{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--ash);padding-block:40px calc(40px + 72px)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center;color:var(--stone);font-size:13px;letter-spacing:.08em}
+footer nav{display:flex;gap:22px;flex-wrap:wrap}
+footer a{text-decoration:none;text-transform:uppercase;letter-spacing:.16em}
+footer a:hover{color:var(--bronze)}
+@media (min-width:761px){footer{padding-block:40px}}
+
+/* mobile sticky cta */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:55;display:none;align-items:center;justify-content:space-between;gap:12px;background:color-mix(in srgb,var(--obsidian) 90%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--ash);padding:12px var(--gutter-r) calc(12px + env(safe-area-inset-bottom,0px)) var(--gutter);transform:translateY(110%);transition:transform .5s var(--ease)}
+.dock.show{transform:none}
+.dock div{font-size:13px;color:var(--stone);line-height:1.3}
+.dock b{display:block;color:var(--bone);font:600 16px/1.2 var(--f-display)}
+.dock .btn{padding:14px 16px;font-size:12px;letter-spacing:.12em}
+@media (max-width:760px){.dock{display:flex}}
+
+/* scroll reveals (start visible, drift in) */
+.js [data-reveal]{transition:opacity 1s var(--ease),transform 1.1s var(--ease)}
+.js [data-reveal].pre{opacity:.25;transform:translateY(34px)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .ridge path{stroke-dashoffset:0}
+  .scrub .w{opacity:1}
+  html{scroll-behavior:auto}
+}
+footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="arr" viewBox="0 0 16 16"><path d="M1 8h13M9 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="chk" viewBox="0 0 16 16"><path d="M2.5 8.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+</svg>
 
-<header class="top">
+<div class="announce">Founding pre-sale is open. <b>100 VIP spots at $159/mo.</b> <a href="#reserve">Reserve with a refundable $50 deposit</a></div>
+
+<header class="nav" id="nav">
   <div class="wrap">
-    <a class="brand" href="#top">THE PELION</a>
-    <nav aria-label="Main">
-      <ul>
-        <li><a href="#disciplines">Disciplines</a></li>
-        <li><a href="#memberships">Memberships</a></li>
-        <li><a href="#founding">Founding</a></li>
-        <li><a href="#visit">Visit</a></li>
-      </ul>
-    </nav>
-    <a class="btn" href="#founding">Reserve</a>
+    <a class="brand" href="#top" aria-label="The Pelion home"><img src="img/crest.png" alt=""><span>THE PELION</span></a>
+    <ul class="links">
+      <li><a href="#pillars">Pillars</a></li>
+      <li><a href="#space">The Space</a></li>
+      <li><a href="#founders">Membership</a></li>
+      <li><a href="#coaches">Coaches</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a class="btn btn-solid magnet" href="#founders">Reserve spot</a>
   </div>
 </header>
 
 <main id="top">
-  <section class="hero" aria-label="The Pelion">
-    <img class="hero-img" src="img/exterior.jpg" alt="">
-    <div class="wrap">
-      <img class="hero-logo" src="img/logo.png" alt="The Pelion logo: a figure lifting a barbell beneath a mountain, framed in laurels">
-      <h1>A temple for strength and stillness</h1>
-      <p>Iron, combat, yoga, breathwork and a recovery spa, under one roof and one membership. Opening at 8200 Main Street, Williamsville.</p>
-      <div class="actions">
-        <a class="btn" href="#founding">Claim a founding spot</a>
-        <a class="btn ghost" href="#memberships">See memberships</a>
+<section class="hero">
+  <canvas id="embers" aria-hidden="true"></canvas>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow fade-in">Strength · Combat · Yoga · Breath · Recovery</p>
+      <h1>
+        <span class="line"><span>More than</span></span>
+        <span class="line"><span>a gym.</span></span>
+        <span class="line"><span class="voice">A higher standard.</span></span>
+      </h1>
+      <p class="lede fade-in">Train like the heroes of Mount Pelion. Lift heavy, learn to fight, move with control, breathe deep, then recover in sauna, steam and ice. Six disciplines, one membership.</p>
+      <div class="hero-ctas fade-in">
+        <a class="btn btn-solid magnet" href="#founders">Claim founding rate <svg><use href="#arr"/></svg></a>
+        <a class="btn btn-ghost" href="#pillars">Explore the sanctuary</a>
       </div>
-      <p class="seats">200 founding memberships · $179 a month</p>
+      <ul class="assure fade-in">
+        <li><svg><use href="#chk"/></svg>$50 deposit, fully refundable</li>
+        <li><svg><use href="#chk"/></svg>No sign-up fee</li>
+        <li><svg><use href="#chk"/></svg>Pay monthly only once we open</li>
+      </ul>
     </div>
-  </section>
-
-  <section id="disciplines">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Five disciplines</span>
-        <h2>Train, fight, flow, breathe, recover</h2>
-        <p class="lede">Most people pay a gym, a dojo, a yoga studio and a recovery spa separately. At The Pelion it is one key and one monthly price.</p>
-      </div>
-      <div class="disciplines">
-        <article class="disc wide">
-          <img src="img/iron.jpg" alt="The iron floor with racks and benches under linear lights" loading="lazy">
-          <div class="txt"><span class="eyebrow">The Iron Floor</span><h3>Heavy iron, coached</h3><p>Racks, platforms, dumbbells to the heavy end and plate-loaded machines. Coached by the owner, a lifter for 24 years.</p></div>
-        </article>
-        <article class="disc wide">
-          <img src="img/combat.jpg" alt="Martial arts mat room with heavy bags" loading="lazy">
-          <div class="txt"><span class="eyebrow">The Mat Room</span><h3>Martial arts</h3><p>Kickboxing, striking and grappling on full tatami. Classes for adults, and a kids program for members' families.</p></div>
-        </article>
-        <article class="disc third">
-          <img src="img/yoga.jpg" alt="Yoga studio with warm wood floor" loading="lazy">
-          <div class="txt"><span class="eyebrow">The Studio</span><h3>Yoga</h3><p>Flow, power and restorative classes, capped so every mat has room.</p></div>
-        </article>
-        <article class="disc third">
-          <img src="img/breathwork.jpg" alt="Dim breathwork room with mats on the floor" loading="lazy">
-          <div class="txt"><span class="eyebrow">The Chamber</span><h3>Breathwork</h3><p>Guided breathwork and sound sessions in a dark, quiet room.</p></div>
-        </article>
-        <article class="disc third">
-          <img src="img/spa.jpg" alt="Recovery spa with cold plunge and sauna" loading="lazy">
-          <div class="txt"><span class="eyebrow">The Sanctum</span><h3>Recovery spa</h3><p>Sauna, cold plunge, red light and compression, booked by the session.</p></div>
-        </article>
+    <div class="arch">
+      <div class="arch-line"></div>
+      <div class="arch-frame"><img data-parallax="0.12" src="img/floor.jpg" alt="The Pelion strength floor with bronze light lines across a black ceiling"></div>
+      <div class="arch-tag">
+        <div><small>Opening soon</small><strong>The Strength Floor</strong></div>
+        <svg class="seal" viewBox="0 0 100 100" aria-hidden="true">
+          <defs><path id="circ" d="M50 50 m-38 0 a38 38 0 1 1 76 0 a38 38 0 1 1 -76 0"/></defs>
+          <text><textPath href="#circ">FOUNDING MEMBERS · EST. 2026 · </textPath></text>
+          <path d="M50 38 l12 22 h-24z" fill="none" stroke="#c9a46a" stroke-width="1.4"/>
+        </svg>
       </div>
     </div>
-  </section>
+  </div>
+  <svg class="ridge" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true">
+    <path class="fill" d="M0 140 L0 118 L120 96 L210 104 L330 62 L400 78 L520 30 L600 58 L690 44 L780 82 L880 50 L960 66 L1060 20 L1150 60 L1240 74 L1330 92 L1440 84 L1440 140Z"/>
+    <path d="M0 118 L120 96 L210 104 L330 62 L400 78 L520 30 L600 58 L690 44 L780 82 L880 50 L960 66 L1060 20 L1150 60 L1240 74 L1330 92 L1440 84"/>
+  </svg>
+</section>
 
-  <section class="creed">
-    <div class="wrap">
-      <div>
-        <span class="eyebrow">Never crowded</span>
-        <h2 style="margin-top:14px">A limited membership, by design</h2>
-        <p class="lede" style="margin-top:16px">The Pelion is 13,000 square feet with a hard limit on members. When we reach it, new members join a waitlist.</p>
-        <ul>
-          <li><strong>600</strong><span>adult memberships, then a waitlist</span></li>
-          <li><strong>22</strong><span>mats per yoga class, 16 for breathwork</span></li>
-          <li><strong>16</strong><span>guests per recovery slot, booked in the app</span></li>
+<div class="marquee" aria-hidden="true"><div class="marquee-track">
+  <span>Strength</span><span>Kickboxing</span><span>Brazilian Jiu-Jitsu</span><span>Yoga</span><span>Breathwork</span><span>Mental Conditioning</span><span>Sauna</span><span>Steam</span><span>Cold Plunge</span>
+  <span>Strength</span><span>Kickboxing</span><span>Brazilian Jiu-Jitsu</span><span>Yoga</span><span>Breathwork</span><span>Mental Conditioning</span><span>Sauna</span><span>Steam</span><span>Cold Plunge</span>
+</div></div>
+
+<section class="band" id="origin">
+  <div class="wrap origin-grid">
+    <div class="crest" data-reveal><img data-parallax="-0.06" src="img/crest.png" alt="The Pelion crest: a hero lifting a barbell beneath a mountain and laurels"></div>
+    <div class="origin-copy">
+      <p class="eyebrow">The return of the sanctuary</p>
+      <p class="scrub" id="scrub">On Mount Pelion, the centaur Chiron trained <em>Achilles</em> and <em>Hercules.</em> Combat, wisdom, music and recovery were taught as one craft. We rebuilt that academy for the modern athlete, so your progress stops being random.</p>
+      <div class="facts" data-reveal>
+        <div><b data-count="6">6</b><span>Sanctuary pillars</span></div>
+        <div><b data-count="1">1</b><span>All-inclusive membership</span></div>
+        <div><b>$<span data-count="0">0</span></b><span>Sign-up fee for founders</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="pillars" style="padding-top:0">
+  <div class="wrap">
+    <div class="head" data-reveal>
+      <div style="display:grid;gap:18px"><p class="eyebrow">Six sanctuary pillars</p><h2>Built as one system.</h2></div>
+      <p class="lede">Strength builds the engine. Martial arts sharpens it. Yoga keeps it mobile, breathwork calms it, and the thermal spa repairs it. Tap a pillar to step inside.</p>
+    </div>
+    <div class="pillars" id="pillarRow" data-reveal>
+      <div role="button" tabindex="0" class="pillar on" aria-expanded="true"><img src="img/strength.jpg" alt=""><span class="num">I</span><span class="vlabel">Strength</span>
+        <span class="body"><h3>Strength</h3><p>Technical strength training and conditioning, engineered to build muscle and real power. Racks, platforms and a full selectorized floor.</p><ul><li>Power racks</li><li>Free weights</li><li>Conditioning</li></ul></span></div>
+      <div role="button" tabindex="0" class="pillar" aria-expanded="false"><img src="img/martial.jpg" alt=""><span class="num">II</span><span class="vlabel">Martial Arts</span>
+        <span class="body"><h3>Martial Arts</h3><p>Kickboxing and Brazilian Jiu-Jitsu with expert mechanics. Sharpen striking, timing and ground control in a dedicated combat room.</p><ul><li>Kickboxing</li><li>Boxing</li><li>BJJ</li></ul></span></div>
+      <div role="button" tabindex="0" class="pillar" aria-expanded="false"><img src="img/yoga-studio.jpg" alt=""><span class="num">III</span><span class="vlabel">Yoga</span>
+        <span class="body"><h3>Yoga</h3><p>Mindful movement and somatic flexibility. A disciplined approach to mobility, alignment and a body that lasts.</p><ul><li>Mobility</li><li>Alignment</li><li>Longevity</li></ul></span></div>
+      <div role="button" tabindex="0" class="pillar" aria-expanded="false"><img src="img/breath-room.jpg" alt=""><span class="num">IV</span><span class="vlabel">Breathwork</span>
+        <span class="body"><h3>Breathwork</h3><p>A meditation room tuned with audio frequencies for deep neural restoration and mental clarity.</p><ul><li>Frequency room</li><li>Guided sessions</li></ul></span></div>
+      <div role="button" tabindex="0" class="pillar" aria-expanded="false"><img src="img/mental.jpg" alt=""><span class="num">V</span><span class="vlabel">Mental Conditioning</span>
+        <span class="body"><h3>Mental Conditioning</h3><p>Train focus, resilience and emotional control. Turn pressure into clarity and chaos into calm action.</p><ul><li>Focus</li><li>Resilience</li><li>Control</li></ul></span></div>
+      <div role="button" tabindex="0" class="pillar ice" aria-expanded="false"><img src="img/recovery.jpg" alt=""><span class="num">VI</span><span class="vlabel">Recovery</span>
+        <span class="body"><h3>Recovery</h3><p>Restore balance in the thermal spa. Heat in the sauna and steam room, then reset in the cold plunge. Included in every membership.</p><ul><li>Sauna</li><li>Steam room</li><li>Cold plunge</li></ul></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band value" id="value">
+  <div class="wrap value-grid">
+    <div class="value-copy" data-reveal>
+      <p class="eyebrow">What one membership replaces</p>
+      <h2>Five memberships. <span class="voice">One key.</span></h2>
+      <p class="lede">Most people who train seriously pay a gym, a fight academy, a yoga studio and a recovery spa separately. At The Pelion every pillar is unlimited and included. Untick what you would never use and see what is left.</p>
+      <a class="btn btn-solid magnet" href="#founders" style="justify-self:start">See founding rates <svg><use href="#arr"/></svg></a>
+    </div>
+    <div class="calc" data-reveal>
+      <p class="calc-title">Paying for it separately</p>
+      <div class="opts" id="opts">
+        <label class="opt"><input type="checkbox" id="o-gym" value="79" checked><span><b>Premium gym</b><small>Strength floor and conditioning</small></span><span class="amt">$79</span></label>
+        <label class="opt"><input type="checkbox" id="o-mma" value="189" checked><span><b>Martial arts academy</b><small>Kickboxing and BJJ, unlimited</small></span><span class="amt">$189</span></label>
+        <label class="opt"><input type="checkbox" id="o-yoga" value="139" checked><span><b>Yoga studio</b><small>Unlimited classes</small></span><span class="amt">$139</span></label>
+        <label class="opt"><input type="checkbox" id="o-spa" value="129" checked><span><b>Recovery spa</b><small>Sauna, steam, cold plunge</small></span><span class="amt">$129</span></label>
+        <label class="opt"><input type="checkbox" id="o-breath" value="69" checked><span><b>Breathwork classes</b><small>Guided sessions</small></span><span class="amt">$69</span></label>
+      </div>
+      <div class="totals">
+        <div class="strike"><span>Separately</span><b id="sepTotal">$605</b></div>
+        <div class="ours"><span>The Pelion VIP</span><b>$159</b></div>
+      </div>
+      <p class="save" id="saveLine">You keep <b id="saveAmt">$446</b> a month, or <b id="saveYr">$5,352</b> a year.</p>
+      <p class="fine">Separate prices are typical monthly rates for comparable stand-alone memberships, shown for illustration.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="space">
+  <div class="wrap">
+    <div class="head" data-reveal>
+      <div style="display:grid;gap:18px"><p class="eyebrow">Walk the sanctuary</p><h2>Black stone. Bronze light.</h2></div>
+      <p class="lede">Every room was designed to make you want to stay longer. Drag to walk through.</p>
+    </div>
+  </div>
+  <div class="strip-max">
+    <div class="strip" id="strip" tabindex="0" aria-label="Gallery of The Pelion spaces">
+      <figure class="wide"><div class="ph"><img src="img/entrance.jpg" alt="Exterior of The Pelion with the crest lit above the entrance"></div><figcaption><b>The entrance</b><span>Arrival</span></figcaption></figure>
+      <figure><div class="ph"><img src="img/floor.jpg" alt="Strength floor with selectorized machines"></div><figcaption><b>Strength floor</b><span>Pillar I</span></figcaption></figure>
+      <figure><div class="ph"><img src="img/martial.jpg" alt="Combat room with heavy bags and mats"></div><figcaption><b>Combat room</b><span>Pillar II</span></figcaption></figure>
+      <figure><div class="ph"><img src="img/yoga-studio.jpg" alt="Yoga studio with patterned mats"></div><figcaption><b>Yoga studio</b><span>Pillar III</span></figcaption></figure>
+      <figure><div class="ph"><img src="img/breath-room.jpg" alt="Breathwork room with wood floor and three mats"></div><figcaption><b>Frequency room</b><span>Pillar IV</span></figcaption></figure>
+      <figure><div class="ph"><img src="img/recovery.jpg" alt="Thermal spa with cold plunge, steam and sauna"></div><figcaption><b>Thermal spa</b><span>Pillar VI</span></figcaption></figure>
+      <figure><div class="ph"><img src="img/strength.jpg" alt="Free weight area with benches"></div><figcaption><b>Free weights</b><span>Pillar I</span></figcaption></figure>
+    </div>
+    <p class="disclaim wrap">Concept renderings of the planned space. Final finishes may be refined during build-out.</p>
+  </div>
+</section>
+
+<section class="band value" id="founders">
+  <div class="wrap">
+    <div class="head" data-reveal>
+      <div style="display:grid;gap:18px"><p class="eyebrow">Founding pre-sale</p><h2>Claim a founding rate <span class="voice">before they go.</span></h2></div>
+      <p class="lede">Only 200 founding memberships exist. When they are gone, the price is $199 a month for everyone else. Every tier includes every pillar, unlimited.</p>
+    </div>
+    <div class="tiers" id="tiers">
+      <article class="tier hero-tier" data-reveal>
+        <span class="flag">Best rate</span>
+        <div><p class="kicker">Tier one</p><h3>VIP Founder</h3></div>
+        <div class="price"><b>$<span data-count="159">159</span></b><span>/ month</span></div>
+        <p class="terms">With contract. First 100 members only.</p>
+        <span class="badge-save">Save $480 a year vs Open Door</span>
+        <ul class="incl">
+          <li><svg><use href="#chk"/></svg>Unlimited strength floor</li>
+          <li><svg><use href="#chk"/></svg>All group classes: kickboxing, BJJ, yoga</li>
+          <li><svg><use href="#chk"/></svg>Breathwork studio</li>
+          <li><svg><use href="#chk"/></svg>Recovery spa: sauna, steam, cold plunge</li>
+          <li><svg><use href="#chk"/></svg>No sign-up fee</li>
         </ul>
-      </div>
-      <img src="img/wood-logo.jpg" alt="The Pelion mark carved into dark wood" loading="lazy">
+        <div class="spots"><div class="row"><span>Spots remaining</span><b><span class="left" data-tier="vip">100</span> of 100</b></div><div class="bar"><i data-tier="vip"></i></div></div>
+        <a class="btn btn-solid magnet" href="#reserve" data-tier-pick="VIP Founder ($159/mo)">Reserve for $50 <svg><use href="#arr"/></svg></a>
+      </article>
+      <article class="tier" data-reveal>
+        <div><p class="kicker">Tier two</p><h3>Core Founder</h3></div>
+        <div class="price"><b>$<span data-count="179">179</span></b><span>/ month</span></div>
+        <p class="terms">With contract. Opens when Tier One fills.</p>
+        <span class="badge-save">Save $240 a year vs Open Door</span>
+        <ul class="incl">
+          <li><svg><use href="#chk"/></svg>Unlimited strength floor</li>
+          <li><svg><use href="#chk"/></svg>All group classes: kickboxing, BJJ, yoga</li>
+          <li><svg><use href="#chk"/></svg>Breathwork studio</li>
+          <li><svg><use href="#chk"/></svg>Recovery spa: sauna, steam, cold plunge</li>
+        </ul>
+        <div class="spots"><div class="row"><span>Spots remaining</span><b><span class="left" data-tier="core">100</span> of 100</b></div><div class="bar"><i data-tier="core"></i></div></div>
+        <a class="btn btn-ghost" href="#reserve" data-tier-pick="Core Founder ($179/mo)">Get notified <svg><use href="#arr"/></svg></a>
+      </article>
+      <article class="tier" data-reveal>
+        <div><p class="kicker">At launch</p><h3>Open Door</h3></div>
+        <div class="price"><b>$<span data-count="199">199</span></b><span>/ month</span></div>
+        <p class="terms">No contract. Available when we open.</p>
+        <span class="badge-save" style="opacity:.6">Standard rate</span>
+        <ul class="incl">
+          <li><svg><use href="#chk"/></svg>Unlimited strength floor</li>
+          <li><svg><use href="#chk"/></svg>All group classes: kickboxing, BJJ, yoga</li>
+          <li><svg><use href="#chk"/></svg>Breathwork studio</li>
+          <li><svg><use href="#chk"/></svg>Recovery spa: sauna, steam, cold plunge</li>
+        </ul>
+        <div class="spots"><div class="row"><span>Availability</span><b>Unlimited</b></div><div class="bar"><i style="width:100%;opacity:.35"></i></div></div>
+        <a class="btn btn-ghost" href="#reserve" data-tier-pick="Just send me updates">Join the list <svg><use href="#arr"/></svg></a>
+      </article>
     </div>
-  </section>
+    <div class="deposit" data-reveal>
+      <span class="big">$50</span>
+      <p><b>Your deposit is fully refundable.</b> Send the form and we will contact you to collect it. If the facility does not meet your expectations at launch, you get it back. Your monthly membership only starts when the doors open.</p>
+      <a class="btn btn-solid magnet" href="#reserve">Reserve now</a>
+    </div>
+  </div>
+</section>
 
-  <section id="memberships">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Memberships</span>
-        <h2>One price for everything, or start with one discipline</h2>
-        <p class="lede">Every membership includes the recovery spa. Month to month, no annual fee.</p>
-      </div>
-      <div class="tiers">
-        <article class="tier anchor">
-          <span class="tag">Most complete</span>
-          <h3>Elite All-Access</h3>
-          <div class="price">$199 <small>/ month</small></div>
-          <ul>
-            <li>Iron floor, mat room and studio</li>
-            <li>All martial arts, yoga and breathwork</li>
-            <li>Unlimited booked recovery</li>
-            <li>4 guest passes a month</li>
-            <li>VIP locker and towel service</li>
-          </ul>
-          <a class="btn" href="#founding">Reserve</a>
-        </article>
-        <article class="tier">
-          <span class="tag"></span>
-          <h3>Iron + Recovery</h3>
-          <div class="price">$149 <small>/ month</small></div>
-          <ul>
-            <li>The iron floor</li>
-            <li>4 recovery sessions a month</li>
-            <li>1 guest pass a month</li>
-          </ul>
-          <a class="btn ghost" href="#founding">Reserve</a>
-        </article>
-        <article class="tier">
-          <span class="tag"></span>
-          <h3>Flow + Recovery</h3>
-          <div class="price">$159 <small>/ month</small></div>
-          <ul>
-            <li>Yoga and breathwork classes</li>
-            <li>4 recovery sessions a month</li>
-            <li>1 guest pass a month</li>
-          </ul>
-          <a class="btn ghost" href="#founding">Reserve</a>
-        </article>
-        <article class="tier">
-          <span class="tag"></span>
-          <h3>Combat + Recovery</h3>
-          <div class="price">$169 <small>/ month</small></div>
-          <ul>
-            <li>All martial arts classes</li>
-            <li>Conditioning floor</li>
-            <li>4 recovery sessions a month</li>
-          </ul>
-          <a class="btn ghost" href="#founding">Reserve</a>
-        </article>
-      </div>
-      <div class="extras">
-        <div class="extra"><b>Recovery Club · $149 / month</b><span>Unlimited booked sauna, cold plunge, red light and compression.</span></div>
-        <div class="extra"><b>Kids Martial Arts · $129 / month</b><span>Two classes a week. $99 for a member's child.</span></div>
-        <div class="extra"><b>Day pass · $35, or $45 with recovery</b><span>Personal training from $85 a session.</span></div>
-      </div>
+<section class="band" id="how">
+  <div class="wrap">
+    <div class="head" data-reveal><div style="display:grid;gap:18px"><p class="eyebrow">How the pre-sale works</p><h2>Three steps to founder.</h2></div></div>
+    <div class="steps" data-reveal>
+      <div class="step"><h3>Reserve with $50</h3><p>Secure a VIP spot at $159 a month. No sign-up fee.</p></div>
+      <div class="step"><h3>Watch it rise</h3><p>Founders get build updates, first looks at the space and the opening date before anyone else.</p></div>
+      <div class="step"><h3>Walk in on day one</h3><p>Your membership begins at launch. Not what we promised? Your deposit comes back in full.</p></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="founding" id="founding">
-    <img class="bg" src="img/yoga-dark.jpg" alt="">
-    <div class="wrap">
-      <div class="offer">
-        <span class="eyebrow">Founding membership</span>
-        <div class="big">$179</div>
-        <h2>Elite All-Access at the founding rate</h2>
-        <p class="lede">The first 200 members get everything in Elite for $20 a month less. Founding memberships carry a 12-month commitment and close on opening day.</p>
-        <div class="meter" aria-live="polite">
-          <div class="bar"><i id="meter-fill"></i></div>
-          <small id="meter-text">200 founding spots available</small>
-        </div>
-      </div>
-      <form id="reserve" novalidate>
-        <input type="hidden" name="_subject" value="New Pelion reservation">
-        <input type="hidden" name="_template" value="table">
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <h3>Reserve your spot</h3>
-        <p class="note">No charge today. We'll contact you before opening to confirm.</p>
-        <div class="row2">
-          <div class="field"><label for="f-first">First name</label><input id="f-first" name="first" autocomplete="given-name" required></div>
-          <div class="field"><label for="f-last">Last name</label><input id="f-last" name="last" autocomplete="family-name" required></div>
-        </div>
-        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
-        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
-        <div class="field">
-          <label for="f-tier">Membership</label>
-          <select id="f-tier" name="tier">
-            <option>Founding Elite · $179</option>
-            <option>Elite All-Access · $199</option>
-            <option>Iron + Recovery · $149</option>
-            <option>Flow + Recovery · $159</option>
-            <option>Combat + Recovery · $169</option>
-            <option>Recovery Club · $149</option>
-            <option>Kids Martial Arts · $129</option>
-          </select>
-        </div>
-        <button class="btn" type="submit">Reserve my spot</button>
-        <p class="form-msg" id="form-msg" role="status"></p>
-      </form>
+<section class="band" id="coaches" style="padding-top:0">
+  <div class="wrap">
+    <div class="head" data-reveal>
+      <div style="display:grid;gap:18px"><p class="eyebrow">The architects of power</p><h2>Coached by specialists.</h2></div>
+      <p class="lede">Each pillar is led by a head coach who has spent years in their discipline.</p>
     </div>
-  </section>
+    <div class="coaches">
+      <article class="coach" data-reveal><div class="portrait"><span>BF</span></div><div><small>Founder · Head of Strength</small><h3>Bartolomeo Fasano</h3></div><p>Strength and conditioning specialist who engineered The Pelion around raw power and technical precision.</p></article>
+      <article class="coach" data-reveal><div class="portrait"><span>JF</span></div><div><small>Kickboxing Head Coach</small><h3>Javier Figueroa</h3></div><p>A decade in elite combat. A technical approach to kickboxing and boxing built on fluid mechanics and mental resilience.</p></article>
+      <article class="coach tba" data-reveal><div class="portrait"><span>Announcing soon</span></div><div><small>Head of Recovery &amp; Yoga</small><h3>To be revealed</h3></div><p>Leads the recovery sanctuary with a focus on breathwork, somatic healing and neural balance.</p></article>
+      <article class="coach tba" data-reveal><div class="portrait"><span>Announcing soon</span></div><div><small>BJJ Head Coach</small><h3>To be revealed</h3></div><p>Technical mastery, leverage and the strategy of ground combat.</p></article>
+    </div>
+  </div>
+</section>
 
-  <section class="visit" id="visit">
-    <div class="wrap">
-      <div class="col">
-        <span class="eyebrow">Find us</span>
-        <h3>8200 Main Street<br>Williamsville, NY 14221</h3>
-        <p class="lede">On the Main and Transit corridor, with parking out front.</p>
-        <a href="https://www.google.com/maps/search/?api=1&amp;query=8200+Main+St+Williamsville+NY+14221" target="_blank" rel="noopener">Open in Maps</a>
-      </div>
-      <div class="col">
-        <span class="eyebrow">Hours</span>
-        <dl class="hours">
-          <dt>Monday – Friday</dt><dd>7:00 am – 8:30 pm</dd>
-          <dt>Saturday</dt><dd>8:00 am – 12:00 pm</dd>
-          <dt>Sunday</dt><dd>Closed</dd>
-        </dl>
-      </div>
-      <div class="col">
-        <span class="eyebrow">Family owned</span>
-        <p class="lede">The Pelion is run by the Fasano family. Bartolomeo Fasano coaches the iron floor and holds a black belt in kickboxing.</p>
-      </div>
+<section class="band value" id="faq">
+  <div class="wrap faq-grid">
+    <div data-reveal style="display:grid;gap:18px;align-content:start"><p class="eyebrow">Questions</p><h2>Before you reserve.</h2></div>
+    <div>
+      <details open><summary>Is the $50 deposit really refundable?<i></i></summary><p>Yes. If the facility does not meet your complete expectations when it opens, the full deposit is returned.</p></details>
+      <details><summary>How long does the founding rate last?<i></i></summary><p>VIP Founders pay $159 a month for the length of their founding contract. The standard rate at launch is $199 a month.</p></details>
+      <details><summary>What is included in the membership?<i></i></summary><p>Every tier includes unlimited, all-inclusive access to the strength floor, all group classes (kickboxing, Brazilian Jiu-Jitsu, yoga), the breathwork studio and the recovery spa with sauna, steam room and cold plunge.</p></details>
+      <details><summary>When do monthly payments start?<i></i></summary><p>Only when the doors open. Your deposit holds the spot until then.</p></details>
+      <details><summary>Do I need experience in martial arts or yoga?<i></i></summary><p>No. Classes are coached for every level, from your first session to competition prep.</p></details>
     </div>
-  </section>
+  </div>
+</section>
+
+<section class="band final" id="join">
+  <div class="bg"><img data-parallax="0.1" src="img/racks.jpg" alt=""></div>
+  <div class="wrap">
+    <p class="eyebrow" style="justify-content:center">Establish your legacy</p>
+    <h2 style="margin-top:20px">Be among<br><span class="voice">the first hundred.</span></h2>
+    <p class="lede">Founding spots go in order. Reserve your spot and we will contact you about the $50 refundable deposit, or join the list for build updates and the opening date.</p>
+    <form class="list-form" id="reserve" novalidate>
+      <input type="hidden" name="_subject" value="New Pelion reservation">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label for="f-name">Name</label><input id="f-name" name="name" placeholder="Name" autocomplete="name" required>
+      <label for="f-email">Email</label><input id="f-email" name="email" type="email" placeholder="Email" autocomplete="email" required>
+      <label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" placeholder="Phone (optional)" autocomplete="tel">
+      <label for="f-tier">Membership</label><select id="f-tier" name="membership">
+        <option>VIP Founder ($159/mo)</option>
+        <option>Core Founder ($179/mo)</option>
+        <option>Open Door ($199/mo)</option>
+        <option>Just send me updates</option>
+      </select>
+      <button class="btn btn-solid" type="submit">Reserve my spot</button>
+    </form>
+    <p class="form-note" id="formNote" role="status">No spam. Updates on the build and opening day only.</p>
+  </div>
+</section>
 </main>
 
 <footer>
   <div class="wrap">
-    <span>© <span id="yr">2026</span> The Pelion · Williamsville, NY</span>
-    <span>Strength · Discipline · Stillness</span>
+    <a class="brand" href="#top"><img src="img/crest.png" alt="" style="width:32px"><span style="font-size:15px">THE PELION</span></a>
+    <nav><a href="#pillars">Pillars</a><a href="#founders">Membership</a><a href="#coaches">Coaches</a><a href="#reserve">Reserve</a></nav>
+    <address>8200 Main St, Williamsville, NY 14221<br>Mon–Fri 7:00 am–8:30 pm · Sat 8:00 am–12:00 pm · Sun closed</address>
+    <span>© 2026 The Pelion</span>
   </div>
 </footer>
 
+<div class="dock" id="dock"><div><b>From $159/mo</b>$50 refundable deposit</div><a class="btn btn-solid" href="#founders">Reserve</a></div>
+
 <script>
-(function () {
-  // Founding spots claimed so far. Update this number as reservations come in.
-  var FOUNDING_TOTAL = 200, FOUNDING_CLAIMED = 0;
-  // Reservations are emailed to the owner through FormSubmit.
-  var FORM_ENDPOINT = "https://formsubmit.co/ajax/bfasano84@gmail.com";
+(function(){
+  // Live founding inventory. Wire these to the real counts from the checkout system.
+  var SPOTS = { vip:{left:100,total:100}, core:{left:100,total:100} };
 
-  var left = FOUNDING_TOTAL - FOUNDING_CLAIMED;
-  document.getElementById("meter-fill").style.width = (FOUNDING_CLAIMED / FOUNDING_TOTAL * 100) + "%";
-  document.getElementById("meter-text").textContent = left + " of " + FOUNDING_TOTAL + " founding spots available";
-  document.getElementById("yr").textContent = new Date().getFullYear();
+  var doc=document.documentElement; doc.classList.add('js');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  var form = document.getElementById("reserve"), msg = document.getElementById("form-msg");
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    var first = form.first.value.trim(), last = form.last.value.trim(), email = form.email.value.trim();
-    if (!first || !last) { msg.textContent = "Add your first and last name."; return; }
-    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { msg.textContent = "Enter a valid email so we can reach you."; return; }
-    if (!FORM_ENDPOINT) { msg.textContent = "Reservations open soon. This form isn't connected yet."; return; }
-    msg.textContent = "Sending…";
-    fetch(FORM_ENDPOINT, { method: "POST", headers: { "Accept": "application/json" }, body: new FormData(form) })
-      .then(function (r) {
-        if (!r.ok) throw new Error();
-        form.reset();
-        msg.textContent = "Reserved, " + first + ". We'll be in touch before opening.";
-      })
-      .catch(function () { msg.textContent = "That didn't go through. Please try again in a minute, or email bfasano84@gmail.com."; });
+  // nav state + mobile dock
+  var nav=document.getElementById('nav'), dock=document.getElementById('dock'), founders=document.getElementById('founders');
+  function onScrollUI(){
+    var y=window.scrollY;
+    nav.classList.toggle('solid', y>40);
+    var fr=founders.getBoundingClientRect();
+    var inPricing = fr.top < innerHeight*0.6 && fr.bottom > innerHeight*0.3;
+    dock.classList.toggle('show', y>innerHeight*0.7 && !inPricing);
+  }
+
+  // parallax
+  var px=[].slice.call(document.querySelectorAll('[data-parallax]'));
+  function parallax(){
+    if(reduce) return;
+    px.forEach(function(el){
+      var r=el.parentElement.getBoundingClientRect();
+      if(r.bottom<0||r.top>innerHeight) return;
+      var c=(r.top+r.height/2-innerHeight/2);
+      el.style.setProperty('--py',(c*-parseFloat(el.dataset.parallax)).toFixed(1)+'px');
+    });
+  }
+
+  // origin scrub: words light up as you read
+  var scrub=document.getElementById('scrub');
+  (function split(node){
+    [].slice.call(node.childNodes).forEach(function(n){
+      if(n.nodeType===3){
+        var frag=document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach(function(t){
+          if(!t) return;
+          if(/^\s+$/.test(t)) frag.appendChild(document.createTextNode(t));
+          else { var s=document.createElement('span'); s.className='w'; s.textContent=t; frag.appendChild(s); }
+        });
+        n.parentNode.replaceChild(frag,n);
+      } else if(n.nodeType===1) split(n);
+    });
+  })(scrub);
+  var words=[].slice.call(scrub.querySelectorAll('.w'));
+  function scrubUpdate(){
+    if(reduce){ words.forEach(function(w){w.classList.add('on')}); return; }
+    var r=scrub.getBoundingClientRect();
+    var p=(innerHeight*0.85 - r.top)/(r.height+innerHeight*0.35);
+    p=Math.max(0,Math.min(1,p));
+    var n=Math.round(p*words.length);
+    words.forEach(function(w,i){ w.classList.toggle('on', i<n); });
+  }
+
+  var ticking=false;
+  function frame(){ ticking=false; onScrollUI(); parallax(); scrubUpdate(); }
+  function req(){ if(!ticking){ ticking=true; requestAnimationFrame(frame); } }
+  addEventListener('scroll',req,{passive:true}); addEventListener('resize',req); frame();
+
+  // reveals: start visible-but-dim only for things below the fold
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.remove('pre'); io.unobserve(e.target); } });
+    },{rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('[data-reveal]').forEach(function(el,i){
+      if(el.getBoundingClientRect().top>innerHeight){ el.classList.add('pre'); el.style.transitionDelay=((i%4)*70)+'ms'; io.observe(el); }
+    });
+  }
+
+  // count-ups + spots bars when visible
+  function countUp(el){
+    var to=+el.dataset.count; if(reduce||to===0){ el.textContent=to; return; }
+    var t0=null, dur=1400;
+    function step(t){ if(!t0)t0=t; var k=Math.min(1,(t-t0)/dur); k=1-Math.pow(1-k,3); el.textContent=Math.round(to*k); if(k<1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
+  document.querySelectorAll('.left').forEach(function(el){ el.textContent=SPOTS[el.dataset.tier].left; });
+  if('IntersectionObserver' in window){
+    var io2=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        e.target.querySelectorAll('[data-count]').forEach(countUp);
+        e.target.querySelectorAll('.bar i[data-tier]').forEach(function(b){ var s=SPOTS[b.dataset.tier]; b.style.width=(s.left/s.total*100)+'%'; });
+        io2.unobserve(e.target);
+      });
+    },{threshold:.35});
+    ['origin','tiers'].forEach(function(id){ io2.observe(document.getElementById(id)); });
+  }
+
+  // pillars
+  var pills=[].slice.call(document.querySelectorAll('.pillar'));
+  function open(p){ pills.forEach(function(q){ var on=q===p; q.classList.toggle('on',on); q.setAttribute('aria-expanded',on); }); }
+  pills.forEach(function(p){
+    p.addEventListener('click',function(){ open(p); });
+    p.addEventListener('mouseenter',function(){ if(matchMedia('(hover:hover) and (min-width:761px)').matches) open(p); });
+    p.addEventListener('focus',function(){ open(p); });
+    p.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); open(p); } });
   });
+
+  // value calculator
+  var opts=document.getElementById('opts');
+  function fmt(n){ return '$'+n.toLocaleString('en-US'); }
+  function calc(){
+    var sum=0; opts.querySelectorAll('input:checked').forEach(function(i){ sum+=+i.value; });
+    var save=sum-159;
+    document.getElementById('sepTotal').textContent=fmt(sum);
+    var line=document.getElementById('saveLine');
+    if(save>0) line.innerHTML='You keep <b>'+fmt(save)+'</b> a month, or <b>'+fmt(save*12)+'</b> a year.';
+    else line.innerHTML='Even for one pillar, you get the other five <b>included</b>.';
+  }
+  opts.addEventListener('change',calc); calc();
+
+  // gallery drag-to-scroll
+  var strip=document.getElementById('strip'), down=false, sx=0, sl=0, moved=false;
+  strip.addEventListener('pointerdown',function(e){ if(e.pointerType!=='mouse') return; down=true; moved=false; sx=e.clientX; sl=strip.scrollLeft; });
+  addEventListener('pointermove',function(e){ if(!down) return; var dx=e.clientX-sx; if(Math.abs(dx)>4){ moved=true; strip.classList.add('drag'); } strip.scrollLeft=sl-dx; });
+  addEventListener('pointerup',function(){ if(!down) return; down=false; strip.classList.remove('drag'); });
+  strip.addEventListener('dragstart',function(e){ e.preventDefault(); });
+
+  // tier spotlight
+  document.querySelectorAll('.tier').forEach(function(t){
+    t.addEventListener('pointermove',function(e){ var r=t.getBoundingClientRect(); t.style.setProperty('--x',(e.clientX-r.left)+'px'); t.style.setProperty('--y',(e.clientY-r.top)+'px'); });
+  });
+
+  // magnetic buttons
+  if(!reduce && matchMedia('(hover:hover)').matches){
+    document.querySelectorAll('.magnet').forEach(function(b){
+      b.addEventListener('pointermove',function(e){ var r=b.getBoundingClientRect(); b.style.setProperty('--mx',((e.clientX-r.left-r.width/2)*.18).toFixed(1)+'px'); b.style.setProperty('--my',((e.clientY-r.top-r.height/2)*.3).toFixed(1)+'px'); });
+      b.addEventListener('pointerleave',function(){ b.style.setProperty('--mx','0px'); b.style.setProperty('--my','0px'); });
+    });
+  }
+
+  // tier buttons preselect the form
+  var tierSel=document.getElementById('f-tier');
+  document.querySelectorAll('[data-tier-pick]').forEach(function(a){
+    a.addEventListener('click',function(){ tierSel.value=a.dataset.tierPick; });
+  });
+
+  // reservation form: emailed through FormSubmit
+  var FORM_ENDPOINT='https://formsubmit.co/ajax/bfasano84@gmail.com';
+  var form=document.getElementById('reserve'), note=document.getElementById('formNote');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=form.querySelector('#f-name'), email=form.querySelector('#f-email'), btn=form.querySelector('button');
+    if(!name.value.trim()){ note.textContent='Add your name so we know who to welcome.'; name.focus(); return; }
+    if(!/^\S+@\S+\.\S+$/.test(email.value)){ note.textContent='Enter a valid email address, like you@example.com.'; email.focus(); return; }
+    btn.disabled=true; note.textContent='Sending...';
+    fetch(FORM_ENDPOINT,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)})
+      .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(){
+        var t=document.createElement('p'); t.className='thanks';
+        t.textContent='Thank you, '+name.value.trim().split(' ')[0]+'. Your request is in, and we will reach out at '+email.value.trim()+' about your spot.';
+        form.replaceWith(t); note.hidden=true;
+      })
+      .catch(function(){ btn.disabled=false; note.textContent='Something went wrong. Please try again in a minute, or email bfasano84@gmail.com.'; });
+  });
+
+  // embers
+  var cv=document.getElementById('embers'), ctx=cv.getContext('2d'), parts=[], W=0, H=0, dpr=Math.min(2,devicePixelRatio||1), running=true;
+  function size(){ var r=cv.getBoundingClientRect(); W=r.width; H=r.height; cv.width=W*dpr; cv.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0); }
+  function spawn(init){ return {x:Math.random()*W, y:init?Math.random()*H:H+10, r:Math.random()*1.6+.4, v:Math.random()*.45+.15, d:Math.random()*Math.PI*2, a:Math.random()*.55+.15}; }
+  size(); addEventListener('resize',size);
+  var N = W<700?36:80; for(var i=0;i<N;i++) parts.push(spawn(true));
+  function draw(){
+    if(!running) return;
+    ctx.clearRect(0,0,W,H);
+    parts.forEach(function(p,i){
+      p.y-=p.v; p.d+=.01; p.x+=Math.sin(p.d)*.3;
+      var fade=Math.min(1,p.y/(H*.6));
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,6.283);
+      ctx.fillStyle='rgba(214,176,112,'+(p.a*fade).toFixed(3)+')'; ctx.fill();
+      if(p.y<-10) parts[i]=spawn(false);
+    });
+    requestAnimationFrame(draw);
+  }
+  if(!reduce){
+    new IntersectionObserver(function(es){ running=es[0].isIntersecting; if(running) requestAnimationFrame(draw); }).observe(cv);
+  }
 })();
 </script>
 </body>
