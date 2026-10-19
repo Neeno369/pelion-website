@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Membership · The Pelion</title>
-<meta name="description" content="Day passes, weekly passes and 3 and 6 month memberships at The Pelion, a martial arts gym in Williamsville, NY.">
+<meta name="description" content="Day passes at The Pelion, a martial arts gym in Williamsville, NY.">
 <meta property="og:title" content="The Pelion">
 <meta property="og:description" content="More than martial arts. A higher standard. Founding pre-sale open at 8200 Main St, Williamsville, NY.">
 <meta property="og:image" content="https://www.thepelion.com/img/entrance.jpg">
@@ -398,15 +398,12 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
   <div class="wrap">
     <div class="head" data-reveal>
       <div style="display:grid;gap:18px"><p class="eyebrow">Membership</p><h2>Train on <span class="voice">your terms.</span></h2></div>
-      <p class="lede">Train for a day, a week or a season. Every pass includes every pillar: martial arts, the weight room, yoga, breathwork and the recovery spa. Passes go on sale when the doors open. Until then, founding memberships are on pre-sale. <a href="index.html#founders" style="color:var(--bronze)">See founding rates</a></p>
+      <p class="lede">Drop in for a day. The pass includes every pillar: martial arts, the weight room, yoga, breathwork and the recovery spa. Day passes go on sale when the doors open. Until then, founding memberships are on pre-sale. <a href="index.html#founders" style="color:var(--bronze)">See founding rates</a></p>
     </div>
-    <div class="passes" data-reveal>
+    <div class="passes" data-reveal style="grid-template-columns:minmax(0,340px)">
       <article class="pass"><p class="kicker">Drop in</p><h3>Day Pass</h3><div class="price"><b>$35</b></div><p>One full day of classes, training and recovery.</p><button class="btn btn-ghost" type="button" disabled data-add="day">Available at opening</button></article>
-      <article class="pass"><p class="kicker">Try it out</p><h3>1 Week</h3><div class="price"><b>$79</b></div><p>Seven days, unlimited. The best way to feel the full system.</p><button class="btn btn-ghost" type="button" disabled data-add="week">Available at opening</button></article>
-      <article class="pass"><p class="kicker">Commit</p><h3>3 Months</h3><div class="price"><b>$717</b></div><p>Paid upfront, about $239 a month. Unlimited access.</p><button class="btn btn-ghost" type="button" disabled data-add="3mo">Available at opening</button></article>
-      <article class="pass"><p class="kicker">Transform</p><h3>6 Months</h3><div class="price"><b>$1,314</b></div><p>Paid upfront, about $219 a month. Unlimited access.</p><button class="btn btn-ghost" type="button" disabled data-add="6mo">Available at opening</button></article>
     </div>
-    <p class="passes-note">Passes start on opening day or the date you first check in, whichever is later.</p>
+    <p class="passes-note">Valid for one day from opening day onward.</p>
   </div>
 </section>
 </main>
@@ -447,7 +444,7 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
   addEventListener('scroll',onScroll,{passive:true}); onScroll();
   var FORM_ENDPOINT='https://formsubmit.co/ajax/bfasano84@gmail.com';
   // passes cart
-  var PASSES={day:{name:'Day Pass',price:35},week:{name:'1 Week',price:79},'3mo':{name:'3 Months',price:717},'6mo':{name:'6 Months',price:1314}};
+  var PASSES={day:{name:'Day Pass',price:35}};
   var SALES_OPEN=false; // set true on opening day to let people buy passes
   var CHECKOUT_URL='';   // Stripe checkout endpoint; empty sends the order by email instead
   var cart={};
