@@ -590,7 +590,7 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
       <label for="f-name">Name</label><input id="f-name" name="name" placeholder="Name" autocomplete="name" required>
       <label for="f-email">Email</label><input id="f-email" name="email" type="email" placeholder="Email" autocomplete="email" required>
-      <label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" placeholder="Phone (optional)" autocomplete="tel">
+      <label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" placeholder="Phone" autocomplete="tel" required>
       <label for="f-tier">Membership</label><select id="f-tier" name="membership">
         <option>VIP Founder ($159/mo)</option>
         <option>Core Founder ($179/mo)</option>
@@ -759,9 +759,10 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
   var form=document.getElementById('reserve'), note=document.getElementById('formNote');
   form.addEventListener('submit',function(e){
     e.preventDefault();
-    var name=form.querySelector('#f-name'), email=form.querySelector('#f-email'), btn=form.querySelector('button');
+    var name=form.querySelector('#f-name'), email=form.querySelector('#f-email'), phone=form.querySelector('#f-phone'), btn=form.querySelector('button');
     if(!name.value.trim()){ note.textContent='Add your name so we know who to welcome.'; name.focus(); return; }
     if(!/^\S+@\S+\.\S+$/.test(email.value)){ note.textContent='Enter a valid email address, like you@example.com.'; email.focus(); return; }
+    if(phone.value.replace(/\D/g,'').length<10){ note.textContent='Add a phone number so we can call you about your spot.'; phone.focus(); return; }
     btn.disabled=true; note.textContent='Sending...';
     fetch(FORM_ENDPOINT,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)})
       .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
