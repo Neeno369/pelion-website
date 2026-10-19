@@ -388,7 +388,7 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
       <li><a href="index.html#coaches">Coaches</a></li>
       <li><a href="index.html#faq">FAQ</a></li>
     </ul>
-    <button class="cart-btn" id="cartBtn" type="button" aria-label="Open cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 4h2.5l2.2 11h10.6l2-8H6.6"/><circle cx="9" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/></svg><i id="cartCount"></i></button>
+    <button class="cart-btn" id="cartBtn" type="button" hidden aria-label="Open cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 4h2.5l2.2 11h10.6l2-8H6.6"/><circle cx="9" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/></svg><i id="cartCount"></i></button>
     <a class="btn btn-solid" href="index.html#founders">Reserve spot</a>
   </div>
 </header>
@@ -401,10 +401,10 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
       <p class="lede">Train for a day, a week or a season. Every pass includes every pillar: martial arts, the weight room, yoga, breathwork and the recovery spa. Passes go on sale when the doors open. Until then, founding memberships are on pre-sale. <a href="index.html#founders" style="color:var(--bronze)">See founding rates</a></p>
     </div>
     <div class="passes" data-reveal>
-      <article class="pass"><p class="kicker">Drop in</p><h3>Day Pass</h3><div class="price"><b>$35</b></div><p>One full day of classes, training and recovery.</p><button class="btn btn-ghost" type="button" data-add="day">Add to cart</button></article>
-      <article class="pass"><p class="kicker">Try it out</p><h3>1 Week</h3><div class="price"><b>$79</b></div><p>Seven days, unlimited. The best way to feel the full system.</p><button class="btn btn-ghost" type="button" data-add="week">Add to cart</button></article>
-      <article class="pass"><p class="kicker">Commit</p><h3>3 Months</h3><div class="price"><b>$717</b></div><p>Paid upfront, about $239 a month. Unlimited access.</p><button class="btn btn-ghost" type="button" data-add="3mo">Add to cart</button></article>
-      <article class="pass"><p class="kicker">Transform</p><h3>6 Months</h3><div class="price"><b>$1,314</b></div><p>Paid upfront, about $219 a month. Unlimited access.</p><button class="btn btn-ghost" type="button" data-add="6mo">Add to cart</button></article>
+      <article class="pass"><p class="kicker">Drop in</p><h3>Day Pass</h3><div class="price"><b>$35</b></div><p>One full day of classes, training and recovery.</p><button class="btn btn-ghost" type="button" disabled data-add="day">Available at opening</button></article>
+      <article class="pass"><p class="kicker">Try it out</p><h3>1 Week</h3><div class="price"><b>$79</b></div><p>Seven days, unlimited. The best way to feel the full system.</p><button class="btn btn-ghost" type="button" disabled data-add="week">Available at opening</button></article>
+      <article class="pass"><p class="kicker">Commit</p><h3>3 Months</h3><div class="price"><b>$717</b></div><p>Paid upfront, about $239 a month. Unlimited access.</p><button class="btn btn-ghost" type="button" disabled data-add="3mo">Available at opening</button></article>
+      <article class="pass"><p class="kicker">Transform</p><h3>6 Months</h3><div class="price"><b>$1,314</b></div><p>Paid upfront, about $219 a month. Unlimited access.</p><button class="btn btn-ghost" type="button" disabled data-add="6mo">Available at opening</button></article>
     </div>
     <p class="passes-note">Passes start on opening day or the date you first check in, whichever is later.</p>
   </div>
@@ -490,9 +490,9 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
     });
   });
   renderCart();
-  if(!SALES_OPEN){
-    document.getElementById('cartBtn').hidden=true;
-    [].forEach.call(document.querySelectorAll('[data-add]'),function(b){ b.disabled=true; b.textContent='Available at opening'; });
+  if(SALES_OPEN){
+    [].forEach.call(document.querySelectorAll('[data-add]'),function(b){ b.disabled=false; b.textContent='Add to cart'; });
+    document.getElementById('cartBtn').hidden=false;
   }
   var co=document.getElementById('checkout'), coNote=document.getElementById('cartNote');
   co.addEventListener('submit',function(e){
