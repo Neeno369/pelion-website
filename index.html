@@ -534,7 +534,7 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
     </div>
     <div class="deposit" data-reveal>
       <span class="big">$50</span>
-      <p><b>Your deposit is fully refundable.</b> Send the form and we will contact you to collect it. If the facility does not meet your expectations at launch, you get it back. Your monthly membership only starts when the doors open.</p>
+      <p><b>Your deposit is fully refundable.</b> Reserve your spot and pay the $50 online by card, PayPal or Venmo. If the facility does not meet your expectations at launch, you get it back. Your monthly membership only starts when the doors open.</p>
       <a class="btn btn-solid magnet" href="#reserve">Reserve now</a>
     </div>
   </div>
@@ -583,7 +583,7 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
   <div class="wrap">
     <p class="eyebrow" style="justify-content:center">Establish your legacy</p>
     <h2 style="margin-top:20px">Be among<br><span class="voice">the first hundred.</span></h2>
-    <p class="lede">Founding spots go in order. Reserve your spot and we will contact you about the $50 refundable deposit, or join the list for build updates and the opening date.</p>
+    <p class="lede">Founding spots go in order. Reserve your spot and pay the $50 refundable deposit online by card, PayPal or Venmo, or join the list for build updates and the opening date.</p>
     <form class="list-form" id="reserve" novalidate>
       <input type="hidden" name="_subject" value="New Pelion reservation">
       <input type="hidden" name="_template" value="table">
@@ -760,10 +760,6 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
   var PAYPAL_LINK='';   // PayPal, Venmo and cards
   var STRIPE_LINK='';   // cards, Apple Pay and Google Pay
   var PAY_LINKS=[[PAYPAL_LINK,'Pay with PayPal or Venmo'],[STRIPE_LINK,'Pay by card']].filter(function(l){return l[0];});
-  if(PAY_LINKS.length){
-    document.querySelector('.deposit p').innerHTML='<b>Your deposit is fully refundable.</b> Send the form, then pay the $50 securely by card, PayPal or Venmo. If the facility does not meet your expectations at launch, you get it back. Your monthly membership only starts when the doors open.';
-    document.querySelector('#join .lede').textContent='Founding spots go in order. Reserve your spot and pay the $50 refundable deposit online, or join the list for build updates and the opening date.';
-  }
   var form=document.getElementById('reserve'), note=document.getElementById('formNote');
   form.addEventListener('submit',function(e){
     e.preventDefault();
