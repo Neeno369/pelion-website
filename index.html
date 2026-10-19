@@ -242,6 +242,11 @@ section{position:relative}
 @media (max-width:980px){.tiers{grid-template-columns:1fr;max-width:560px;margin-inline:auto}.tier.hero-tier{order:-1}}
 @media (max-width:700px){.deposit{grid-template-columns:1fr;text-align:left}}
 
+.commit{margin-top:clamp(28px,4vw,44px);display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:clamp(18px,4vw,56px);align-items:start;border-top:1px solid var(--ash);padding-top:clamp(24px,3vw,34px)}
+.commit h3{font-size:clamp(22px,2.2vw,28px)}
+.commit p{color:var(--stone);max-width:70ch}
+@media (max-width:760px){.commit{grid-template-columns:1fr}}
+
 /* how it works */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;counter-reset:s;border-top:1px solid var(--ash)}
 .step{padding:32px 28px 0 0;display:grid;gap:12px;position:relative}
@@ -531,6 +536,10 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
         <div class="spots"><div class="row"><span>Availability</span><b>Unlimited</b></div><div class="bar"><i style="width:100%;opacity:.35"></i></div></div>
         <a class="btn btn-ghost" href="#reserve" data-tier-pick="Just send me updates">Join the list <svg><use href="#arr"/></svg></a>
       </article>
+    </div>
+    <div class="commit" data-reveal>
+      <h3>Why we ask for <span class="voice">a year.</span></h3>
+      <p>The Pelion is built for people who are committed to their health and well-being. The body is a machine that responds to consistent, intelligent training, and the mind needs the same discipline to stay sharp and calibrated. Twelve months is the time it takes to see what both are capable of. Asking for that commitment brings together members who take the work seriously, so everyone who walks in raises the standard.</p>
     </div>
     <div class="deposit" data-reveal>
       <span class="big">$50</span>
