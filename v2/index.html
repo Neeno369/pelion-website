@@ -569,8 +569,8 @@ footer nav a:hover{color:var(--bronze)}
       <p class="lede">Each pillar is led by a head coach who has spent years in their discipline.</p>
     </div>
     <div class="coaches">
-      <article class="coach" data-reveal><div class="portrait"><span>JF</span></div><div><small>Kickboxing Head Coach</small><h3>Javier Figueroa</h3></div><p>A decade in elite combat. A technical approach to kickboxing and cardio kickboxing built on fluid mechanics and mental resilience.</p></article>
       <article class="coach" data-reveal><div class="portrait"><span>BF</span></div><div><small>Founder · Head of Strength</small><h3>Bartolomeo Fasano</h3></div><p>Strength and conditioning specialist who engineered The Pelion around raw power and technical precision.</p></article>
+      <article class="coach" data-reveal><div class="portrait"><span>JF</span></div><div><small>Kickboxing Head Coach</small><h3>Javier Figueroa</h3></div><p>A decade in elite combat. A technical approach to kickboxing and cardio kickboxing built on fluid mechanics and mental resilience.</p></article>
       <article class="coach tba" data-reveal><div class="portrait"><span>Announcing soon</span></div><div><small>Head of Recovery &amp; Yoga</small><h3>To be revealed</h3></div><p>Leads the recovery sanctuary with a focus on breathwork, somatic healing and neural balance.</p></article>
     </div>
   </div>
@@ -705,14 +705,14 @@ footer nav a:hover{color:var(--bronze)}
   // count-ups and spots bars when visible
   function countUp(el){
     var to=+el.dataset.count, pre=el.dataset.pre||''; if(reduce||to===0){ el.textContent=pre+to; return; }
-    var t0=null, dur=1400;
+    var t0=null, dur=1800; el.textContent=pre+'0';
     function step(t){ if(!t0) t0=t; var k=Math.min(1,(t-t0)/dur); k=1-Math.pow(1-k,3); el.textContent=pre+Math.round(to*k); if(k<1) requestAnimationFrame(step); }
     requestAnimationFrame(step);
   }
   function fillBars(root){ root.querySelectorAll('[data-bar]').forEach(function(el){ var s=SPOTS[el.dataset.bar]; el.style.width=(s.left/s.total*100)+'%'; }); }
   if('IntersectionObserver' in window){
-    var io2=new IntersectionObserver(function(es){ es.forEach(function(e){ if(!e.isIntersecting) return; e.target.querySelectorAll('[data-count]').forEach(countUp); fillBars(e.target); io2.unobserve(e.target); }); },{threshold:.2});
-    document.querySelectorAll('#facts,#tiers .tier').forEach(function(el){ io2.observe(el); });
+    var io2=new IntersectionObserver(function(es){ es.forEach(function(e){ if(!e.isIntersecting) return; var el=e.target; setTimeout(function(){ if(el.dataset.count!=null) countUp(el); else fillBars(el); },250); io2.unobserve(el); }); },{threshold:1,rootMargin:'0px 0px -18% 0px'});
+    document.querySelectorAll('[data-count],#tiers .tier .bar').forEach(function(el){ io2.observe(el); });
   } else fillBars(document);
 
   // tier spotlight
