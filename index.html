@@ -756,6 +756,12 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
 
   // reservation form: emailed through FormSubmit
   var FORM_ENDPOINT='https://formsubmit.co/ajax/bfasano84@gmail.com';
+  // $50 deposit checkout (PayPal or Stripe payment link). Leave empty to collect by follow-up.
+  var DEPOSIT_LINK='';
+  if(DEPOSIT_LINK){
+    document.querySelector('.deposit p').innerHTML='<b>Your deposit is fully refundable.</b> Send the form, then pay the $50 securely by card, PayPal or Venmo. If the facility does not meet your expectations at launch, you get it back. Your monthly membership only starts when the doors open.';
+    document.querySelector('#join .lede').textContent='Founding spots go in order. Reserve your spot and pay the $50 refundable deposit online, or join the list for build updates and the opening date.';
+  }
   var form=document.getElementById('reserve'), note=document.getElementById('formNote');
   form.addEventListener('submit',function(e){
     e.preventDefault();
@@ -769,6 +775,13 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
       .then(function(){
         var t=document.createElement('p'); t.className='thanks';
         t.textContent='Thank you, '+name.value.trim().split(' ')[0]+'. Your request is in, and we will reach out at '+email.value.trim()+' about your spot.';
+        var tier=form.querySelector('#f-tier').value;
+        if(DEPOSIT_LINK && tier!=='Just send me updates'){
+          t.textContent='Thank you, '+name.value.trim().split(' ')[0]+'. One step left: pay the $50 refundable deposit to hold your spot.';
+          var a=document.createElement('a'); a.className='btn btn-solid'; a.href=DEPOSIT_LINK; a.target='_blank'; a.rel='noopener';
+          a.textContent='Pay $50 deposit'; a.style.cssText='margin-top:20px;font-style:normal';
+          t.appendChild(document.createElement('br')); t.appendChild(a);
+        }
         form.replaceWith(t); note.hidden=true;
       })
       .catch(function(){ btn.disabled=false; note.textContent='Something went wrong. Please try again in a minute, or email bfasano84@gmail.com.'; });
