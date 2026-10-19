@@ -23,7 +23,7 @@
   --basalt:#17150f;        /* raised surfaces */
   --ash:#2a2620;           /* hairlines */
   --bone:#ece4d3;          /* primary text, marble */
-  --stone:#a59c8b;         /* secondary text */
+  --stone:#c4baa6;         /* secondary text */
   --bronze:#c9a46a;        /* brand accent, from the crest */
   --bronze-deep:#9f7c49;   /* crest gold */
   --ice:#9cc3cf;           /* cold plunge, used once */
@@ -369,6 +369,15 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
 .page-top{padding-top:clamp(70px,9vw,120px)}
 .page-top h1{font-size:clamp(44px,6vw,84px);line-height:1;margin-top:18px}
 .page-top .lede{margin-top:22px;max-width:62ch}
+
+/* bronze accents: brighter secondary text, bronze on key moments */
+.hero h1 .line:not(:last-child) span{background:linear-gradient(180deg,#f3ead8 30%,#d8b57a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn-solid{box-shadow:0 10px 34px -8px rgba(201,164,106,.55)}
+.price b{color:var(--bronze)}
+.marquee{background:linear-gradient(90deg,#1d1810,#2a2115,#1d1810)}
+.head h2,.value h2,.faq-grid h2{position:relative;padding-bottom:18px}
+.head h2::after,.value h2::after,.faq-grid h2::after{content:"";position:absolute;left:0;bottom:0;width:64px;height:2px;background:var(--bronze)}
+.tier{border-top:2px solid rgba(201,164,106,.55)}
 </style>
 </head>
 <body>
