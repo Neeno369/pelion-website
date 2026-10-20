@@ -293,11 +293,12 @@ details p{color:var(--stone);padding:0 30px 24px 0;max-width:64ch}
 .final .hero-ctas{justify-content:center;margin-top:34px}
 .list-form{margin:44px auto 0;max-width:760px;display:grid;grid-template-columns:1fr 1fr;gap:10px;text-align:left}
 .list-form label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-.list-form input,.list-form select{width:100%;min-width:0;background:rgba(13,12,10,.7);border:1px solid var(--ash);color:var(--bone);font:400 15px var(--f-body);padding:16px;border-radius:2px}
-.list-form input::placeholder{color:var(--stone)}
+.list-form input,.list-form select,.list-form textarea{width:100%;min-width:0;background:rgba(13,12,10,.7);border:1px solid var(--ash);color:var(--bone);font:400 15px var(--f-body);padding:16px;border-radius:2px}
+.list-form input::placeholder,.list-form textarea::placeholder{color:var(--stone)}
 .list-form select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--bronze) 50%),linear-gradient(135deg,var(--bronze) 50%,transparent 50%);background-position:calc(100% - 22px) 50%,calc(100% - 16px) 50%;background-size:6px 6px;background-repeat:no-repeat;padding-right:40px}
 .list-form .btn{grid-column:1/-1}
-.list-form input:focus,.list-form select:focus{outline:none;border-color:var(--bronze)}
+.list-form textarea{resize:vertical;min-height:96px;line-height:1.5}
+.list-form input:focus,.list-form select:focus,.list-form textarea:focus{outline:none;border-color:var(--bronze)}
 .list-form .btn{justify-content:center}
 .form-note{margin-top:12px;font-size:13px;color:var(--stone)}
 .thanks{margin:56px auto 0;max-width:560px;border:1px solid var(--bronze);padding:26px;font:500 22px/1.35 var(--f-voice);font-style:italic}
@@ -631,6 +632,7 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
         <option>Drove by the building</option>
         <option>Other</option>
       </select>
+      <label for="f-notes">Suggestions</label><textarea id="f-notes" name="suggestions" rows="3" maxlength="1000" placeholder="Suggest class times you would like, or anything else you want to see at The Pelion (optional)" style="grid-column:1/-1"></textarea>
       <button class="btn btn-solid" type="submit">Reserve my spot</button>
     </form>
     <p class="form-note" id="formNote" role="status">No spam. Updates on the build and opening day only.</p>
