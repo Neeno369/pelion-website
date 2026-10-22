@@ -617,7 +617,7 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
       <label for="q-name">Name</label><input id="q-name" name="name" placeholder="Name" autocomplete="name" required>
       <label for="q-email">Email</label><input id="q-email" name="email" type="email" placeholder="Email" autocomplete="email" required>
-      <label for="q-phone">Phone</label><input id="q-phone" name="phone" type="tel" placeholder="Phone (optional)" autocomplete="tel">
+      <label for="q-phone">Phone</label><input id="q-phone" name="phone" type="tel" placeholder="Phone" autocomplete="tel" required>
       <label for="q-topic">Topic</label><select id="q-topic" name="topic">
         <option>General question</option>
         <option>Membership and pricing</option>
@@ -829,9 +829,10 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
   var ask=document.getElementById('ask'), askNote=document.getElementById('askNote');
   ask.addEventListener('submit',function(e){
     e.preventDefault();
-    var name=ask.querySelector('#q-name'), email=ask.querySelector('#q-email'), msg=ask.querySelector('#q-message'), btn=ask.querySelector('button');
+    var name=ask.querySelector('#q-name'), email=ask.querySelector('#q-email'), phone=ask.querySelector('#q-phone'), msg=ask.querySelector('#q-message'), btn=ask.querySelector('button');
     if(!name.value.trim()){ askNote.textContent='Add your name so we know who we are answering.'; name.focus(); return; }
     if(!/^\S+@\S+\.\S+$/.test(email.value)){ askNote.textContent='Enter a valid email address, like you@example.com.'; email.focus(); return; }
+    if(phone.value.replace(/\D/g,'').length<10){ askNote.textContent='Add a phone number so we can reach you.'; phone.focus(); return; }
     if(msg.value.trim().length<5){ askNote.textContent='Type your question so we can help.'; msg.focus(); return; }
     btn.disabled=true; askNote.textContent='Sending...';
     fetch(FORM_ENDPOINT,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(ask)})
