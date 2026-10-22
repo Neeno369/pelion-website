@@ -301,6 +301,8 @@ details p{color:var(--stone);padding:0 30px 24px 0;max-width:64ch}
 .list-form input:focus,.list-form select:focus,.list-form textarea:focus{outline:none;border-color:var(--bronze)}
 .list-form .btn{justify-content:center}
 .form-note{margin-top:12px;font-size:13px;color:var(--stone)}
+#contact{text-align:center}
+#contact .lede{margin-inline:auto}
 .thanks{margin:56px auto 0;max-width:560px;border:1px solid var(--bronze);padding:26px;font:500 22px/1.35 var(--f-voice);font-style:italic}
 @media (max-width:760px){.list-form{grid-template-columns:1fr}}
 
@@ -359,6 +361,7 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
       <li><a href="#founders">Membership</a></li>
       <li><a href="#coaches">Coaches</a></li>
       <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
     <a class="btn btn-solid magnet" href="#founders">Reserve spot</a>
   </div>
@@ -603,6 +606,32 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
   </div>
 </section>
 
+<section class="band" id="contact">
+  <div class="wrap">
+    <p class="eyebrow" style="justify-content:center">Still have a question?</p>
+    <h2 style="margin-top:20px">Ask us <span class="voice">anything.</span></h2>
+    <p class="lede">Not ready to reserve? No problem. Ask about the pillars, the founding rates, family memberships or the build, and our team will get back to you by email.</p>
+    <form class="list-form" id="ask" novalidate>
+      <input type="hidden" name="_subject" value="New Pelion question">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label for="q-name">Name</label><input id="q-name" name="name" placeholder="Name" autocomplete="name" required>
+      <label for="q-email">Email</label><input id="q-email" name="email" type="email" placeholder="Email" autocomplete="email" required>
+      <label for="q-phone">Phone</label><input id="q-phone" name="phone" type="tel" placeholder="Phone (optional)" autocomplete="tel">
+      <label for="q-topic">Topic</label><select id="q-topic" name="topic">
+        <option>General question</option>
+        <option>Membership and pricing</option>
+        <option>Family and kids</option>
+        <option>Classes and coaching</option>
+        <option>Partnerships or press</option>
+      </select>
+      <label for="q-message">Your question</label><textarea id="q-message" name="message" rows="4" maxlength="2000" placeholder="Your question" required style="grid-column:1/-1"></textarea>
+      <button class="btn btn-solid" type="submit">Send my question</button>
+    </form>
+    <p class="form-note" id="askNote" role="status">We only use your details to answer your question.</p>
+  </div>
+</section>
+
 <section class="band final" id="join">
   <div class="bg"><img data-parallax="0.1" src="img/racks.jpg" alt=""></div>
   <div class="wrap">
@@ -643,7 +672,7 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
 <footer>
   <div class="wrap">
     <a class="brand" href="#top"><img src="img/crest.png" alt="" style="width:32px"><span style="font-size:15px">THE PELION</span></a>
-    <nav><a href="#pillars">Pillars</a><a href="#founders">Membership</a><a href="#coaches">Coaches</a><a href="#reserve">Reserve</a></nav>
+    <nav><a href="#pillars">Pillars</a><a href="#founders">Membership</a><a href="#coaches">Coaches</a><a href="#contact">Contact</a><a href="#reserve">Reserve</a></nav>
     <address>8200 Main St, Williamsville, NY 14221<br>Mon–Fri 7:00 am–8:30 pm · Sat 8:00 am–12:00 pm · Sun closed</address>
     <span>© 2026 The Pelion</span>
   </div>
@@ -796,6 +825,25 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
   var PAYPAL_LINK='';   // PayPal, Venmo and cards
   var STRIPE_LINK='';   // cards, Apple Pay and Google Pay
   var PAY_LINKS=[[PAYPAL_LINK,'Pay with PayPal or Venmo'],[STRIPE_LINK,'Pay by card']].filter(function(l){return l[0];});
+  // question form: emailed through FormSubmit to the same inbox as reservations
+  var ask=document.getElementById('ask'), askNote=document.getElementById('askNote');
+  ask.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=ask.querySelector('#q-name'), email=ask.querySelector('#q-email'), msg=ask.querySelector('#q-message'), btn=ask.querySelector('button');
+    if(!name.value.trim()){ askNote.textContent='Add your name so we know who we are answering.'; name.focus(); return; }
+    if(!/^\S+@\S+\.\S+$/.test(email.value)){ askNote.textContent='Enter a valid email address, like you@example.com.'; email.focus(); return; }
+    if(msg.value.trim().length<5){ askNote.textContent='Type your question so we can help.'; msg.focus(); return; }
+    btn.disabled=true; askNote.textContent='Sending...';
+    fetch(FORM_ENDPOINT,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(ask)})
+      .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(){
+        var t=document.createElement('p'); t.className='thanks';
+        t.textContent='Thank you, '+name.value.trim().split(' ')[0]+'. Your question is in, and we will reply to '+email.value.trim()+'.';
+        ask.replaceWith(t); askNote.textContent='';
+      })
+      .catch(function(){ btn.disabled=false; askNote.textContent='Something went wrong sending your question. Please try again in a moment.'; });
+  });
+
   var form=document.getElementById('reserve'), note=document.getElementById('formNote');
   form.addEventListener('submit',function(e){
     e.preventDefault();
