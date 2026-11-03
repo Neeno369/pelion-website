@@ -342,6 +342,30 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
 .head h2,.value h2,.faq-grid h2{position:relative;padding-bottom:18px}
 .head h2::after,.value h2::after,.faq-grid h2::after{content:"";position:absolute;left:0;bottom:0;width:64px;height:2px;background:var(--bronze)}
 .tier{border-top:2px solid rgba(201,164,106,.55)}
+/* the pelion app: four phone screens, then what it holds pillar by pillar */
+.app-phones{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2vw,28px);margin-bottom:clamp(48px,6vw,80px)}
+.app-phones figure{margin:0;display:grid;gap:14px}
+.app-phones .screen{border:1px solid var(--ash);border-radius:30px;padding:7px;background:#000;box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+.app-phones img{width:100%;aspect-ratio:390/760;object-fit:cover;object-position:top;border-radius:23px}
+.app-phones figcaption{font:600 11px/1.3 var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:var(--bronze);text-align:center}
+.app-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ash);border:1px solid var(--ash)}
+.app-card{background:var(--obsidian);padding:clamp(24px,2.6vw,36px);display:grid;gap:12px;align-content:start}
+.app-card .kicker{font:600 11px/1 var(--f-body);letter-spacing:.24em;text-transform:uppercase;color:var(--bronze)}
+.app-card h3{font-size:clamp(20px,1.8vw,24px)}
+.app-card p{color:var(--stone);font-size:15px}
+.app-card ul{margin:4px 0 0;padding:0;list-style:none;display:grid;gap:8px;color:var(--bone);font-size:14.5px}
+.app-card li{display:flex;gap:10px;align-items:flex-start}
+.app-card li svg{width:15px;height:15px;color:var(--bronze);flex:none;margin-top:4px}
+.app-note{margin-top:clamp(28px,3vw,40px);display:flex;flex-wrap:wrap;gap:16px 40px;align-items:center;justify-content:space-between}
+.app-note p{color:var(--stone);max-width:62ch;font-size:15px}
+.app-note b{color:var(--bone)}
+@media (max-width:980px){.app-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:760px){
+  .app-phones{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(-1 * var(--gutter)) calc(-1 * var(--gutter-r));padding-inline:var(--gutter) var(--gutter-r);scrollbar-width:none}
+  .app-phones::-webkit-scrollbar{display:none}
+  .app-phones figure{flex:0 0 62%;scroll-snap-align:center}
+  .app-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -350,7 +374,7 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
   <symbol id="chk" viewBox="0 0 16 16"><path d="M2.5 8.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
 </svg>
 
-<div class="announce">Founding pre-sale is open. <b>100 VIP spots at $159/mo.</b> <a href="#reserve">Reserve with a refundable $50 deposit</a></div>
+<div class="announce">Founding pre-sale is open. <b>100 VIP spots at $159/mo.</b> <a href="#reserve">Reserve with a refundable $50 deposit</a> · The Pelion app is free for members.</div>
 
 <header class="nav" id="nav">
   <div class="wrap">
@@ -358,6 +382,7 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
     <ul class="links">
       <li><a href="#pillars">Pillars</a></li>
       <li><a href="#space">The Space</a></li>
+      <li><a href="#app">The App</a></li>
       <li><a href="#founders">Membership</a></li>
       <li><a href="#coaches">Coaches</a></li>
       <li><a href="#faq">FAQ</a></li>
@@ -387,6 +412,7 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
         <li><svg><use href="#chk"/></svg>$50 deposit, fully refundable</li>
         <li><svg><use href="#chk"/></svg>No sign-up fee for founders</li>
         <li><svg><use href="#chk"/></svg>Pay monthly only once we open</li>
+        <li><svg><use href="#chk"/></svg>The Pelion app free for members</li>
       </ul>
     </div>
     <div class="arch">
@@ -496,6 +522,33 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
   </div>
 </section>
 
+<section class="band" id="app">
+  <div class="wrap">
+    <div class="head" data-reveal>
+      <div style="display:grid;gap:18px"><p class="eyebrow">Free with every membership</p><h2>The Pelion, <span class="voice">in your pocket.</span></h2></div>
+      <p class="lede">The Pelion app carries the sanctuary with you. Learn the strikes before class, follow your strength program set by set, flow through guided yoga and breathe with original music, at the gym, at home or on the road. Every member gets it free.</p>
+    </div>
+    <div class="app-phones" data-reveal>
+      <figure><div class="screen"><img src="img/app-martial.jpg" alt="The Pelion app: the kickboxing library with numbered punches" loading="lazy"></div><figcaption>Martial arts</figcaption></figure>
+      <figure><div class="screen"><img src="img/app-warrior.jpg" alt="The Pelion app: The Viking strength program with its soundtrack" loading="lazy"></div><figcaption>Strength</figcaption></figure>
+      <figure><div class="screen"><img src="img/app-yoga.jpg" alt="The Pelion app: the Sun Salutation yoga flow" loading="lazy"></div><figcaption>Yoga</figcaption></figure>
+      <figure><div class="screen"><img src="img/app-breath.jpg" alt="The Pelion app: a power breathing session" loading="lazy"></div><figcaption>Breathwork</figcaption></figure>
+    </div>
+    <div class="app-grid">
+      <article class="app-card" data-reveal><p class="kicker">Pillar I · Martial arts</p><h3>Learn every strike by name.</h3><p>A kickboxing library that teaches the language of the combat room, so you walk into class knowing what the coach is calling.</p><ul><li><svg><use href="#chk"/></svg>Every punch by number: 1 jab, 2 cross, 3 lead hook, 4 rear hook, 5 and 6 uppercuts</li><li><svg><use href="#chk"/></svg>Kicks from the teep and roundhouse to the switch kick and spinning back kick</li><li><svg><use href="#chk"/></svg>Knees, elbows, stance, footwork and defense: slip, roll, parry, check</li><li><svg><use href="#chk"/></svg>Step-by-step technique and a coaching tip for every move</li><li><svg><use href="#chk"/></svg>Classic combinations to drill, called the way a coach calls them</li></ul></article>
+      <article class="app-card" data-reveal><p class="kicker">Pillar II · Strength</p><h3>Programs that know what comes next.</h3><p>Structured programs that hand you each workout in order, ready to log set by set, with demos for every exercise.</p><ul><li><svg><use href="#chk"/></svg>Foundation Strength and Pelion Power</li><li><svg><use href="#chk"/></svg>Five Ancient Warrior programs: the Gladiator, the Spartan, the Viking, the Celt and the Maya</li><li><svg><use href="#chk"/></svg>Original soundtracks for the warrior programs, with drums and ancient instruments</li><li><svg><use href="#chk"/></svg>A library of more than 100 exercises with video and animated demos</li><li><svg><use href="#chk"/></svg>A muscle recovery map that shows what is ready to train</li></ul></article>
+      <article class="app-card" data-reveal><p class="kicker">Pillar III · Yoga</p><h3>Guided flows, pose by pose.</h3><p>An instructor demonstrates every pose on video while a calm voice guides the movement and the breath, flowing from one pose to the next.</p><ul><li><svg><use href="#chk"/></svg>Six flows: Sun Salutation, the Egyptian Flow, Mobility for Lifters, Hips &amp; Hamstrings, Balance &amp; Focus and Evening Wind-Down</li><li><svg><use href="#chk"/></svg>Video of every pose: the movement first, then the hold</li><li><svg><use href="#chk"/></svg>Spoken cues to breathe in, breathe out and release</li><li><svg><use href="#chk"/></svg>Original music for each flow</li></ul></article>
+      <article class="app-card" data-reveal><p class="kicker">Pillar IV · Breathwork</p><h3>Breathe in time with the music.</h3><p>Guided sessions from 12 to 45 minutes, set to original music composed at the pace of the breath, the same practice as the frequency room.</p><ul><li><svg><use href="#chk"/></svg>Eight techniques: box breathing, the physiological sigh, coherent breathing, 4-7-8, the post-training downshift, the pre-lift prime, power breathing and breath of fire</li><li><svg><use href="#chk"/></svg>Power breathing with long holds on empty of 2 to 5 minutes</li><li><svg><use href="#chk"/></svg>Choose a deep or soft voice, chimes or silence</li><li><svg><use href="#chk"/></svg>Keeps playing with your phone locked</li></ul></article>
+      <article class="app-card" data-reveal><p class="kicker">Fuel</p><h3>Fasting and nutrition, simplified.</h3><p>Tools for what happens outside the gym, because recovery and results are built in the kitchen too.</p><ul><li><svg><use href="#chk"/></svg>A fasting timer from 14 hours to 72 hours, with each stage of the fast explained</li><li><svg><use href="#chk"/></svg>A calorie intake guide with a food library</li><li><svg><use href="#chk"/></svg>A supplements guide from A to Z</li><li><svg><use href="#chk"/></svg>A peptides reference, for information only</li></ul></article>
+      <article class="app-card" data-reveal><p class="kicker">For members</p><h3>Your gym, one tap away.</h3><p>Sign in with your member code and the app opens the parts made only for Pelion members.</p><ul><li><svg><use href="#chk"/></svg>The class schedule for every room</li><li><svg><use href="#chk"/></svg>Your member home with your training at a glance</li><li><svg><use href="#chk"/></svg>Updates that arrive as new programs, flows and music are added</li></ul></article>
+    </div>
+    <div class="app-note" data-reveal>
+      <p><b>Coming to the App Store.</b> Every member gets The Pelion app free for as long as their membership is active, with new programs, flows and music added over time.</p>
+      <a class="btn btn-ghost" href="#founders">Claim founding rate <svg><use href="#arr"/></svg></a>
+    </div>
+  </div>
+</section>
+
 <section class="band value" id="founders">
   <div class="wrap">
     <div class="head" data-reveal>
@@ -515,6 +568,7 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
           <li><svg><use href="#chk"/></svg>Yoga classes</li>
           <li><svg><use href="#chk"/></svg>Breathwork studio</li>
           <li><svg><use href="#chk"/></svg>Recovery spa: sauna and cold plunge</li>
+          <li><svg><use href="#chk"/></svg>The Pelion app, free: training programs, guided yoga and breathwork</li>
           <li><svg><use href="#chk"/></svg>No sign-up fee</li>
         </ul>
         <div class="spots"><div class="row"><span>Spots remaining</span><b><span class="left" data-tier="vip">100</span> of 100</b></div><div class="bar"><i data-tier="vip"></i></div></div>
@@ -531,6 +585,7 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
           <li><svg><use href="#chk"/></svg>Yoga classes</li>
           <li><svg><use href="#chk"/></svg>Breathwork studio</li>
           <li><svg><use href="#chk"/></svg>Recovery spa: sauna and cold plunge</li>
+          <li><svg><use href="#chk"/></svg>The Pelion app, free: training programs, guided yoga and breathwork</li>
         </ul>
         <div class="spots"><div class="row"><span>Spots remaining</span><b><span class="left" data-tier="core">100</span> of 100</b></div><div class="bar"><i data-tier="core"></i></div></div>
         <a class="btn btn-ghost" href="#reserve" data-tier-pick="Core Founder ($179/mo)">Get notified <svg><use href="#arr"/></svg></a>
@@ -546,6 +601,7 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
           <li><svg><use href="#chk"/></svg>Yoga classes</li>
           <li><svg><use href="#chk"/></svg>Breathwork studio</li>
           <li><svg><use href="#chk"/></svg>Recovery spa: sauna and cold plunge</li>
+          <li><svg><use href="#chk"/></svg>The Pelion app, free: training programs, guided yoga and breathwork</li>
         </ul>
         <div class="spots"><div class="row"><span>Availability</span><b>Unlimited</b></div><div class="bar"><i style="width:100%;opacity:.35"></i></div></div>
         <a class="btn btn-ghost" href="#reserve" data-tier-pick="Just send me updates">Join the list <svg><use href="#arr"/></svg></a>
@@ -598,7 +654,8 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
     <div>
       <details open><summary>Is the $50 deposit really refundable?<i></i></summary><p>Yes. If the facility does not meet your complete expectations when it opens, the full deposit is returned.</p></details>
       <details><summary>How long does the founding rate last?<i></i></summary><p>Your founding rate, $159 a month for VIP Founders or $179 a month for Core Founders, stays locked in for as long as your membership remains active and each payment is made within 7 days of its due date. If you cancel, the founding rate is lost, and rejoining later is at the standard rate at that time.</p></details>
-      <details><summary>What is included in the membership?<i></i></summary><p>Every tier includes unlimited, all-inclusive access to kickboxing and cardio kickboxing classes, the weight room for strength and conditioning, yoga classes, the breathwork studio and the recovery spa with sauna and cold plunge.</p></details>
+      <details><summary>What is included in the membership?<i></i></summary><p>Every tier includes unlimited, all-inclusive access to kickboxing and cardio kickboxing classes, the weight room for strength and conditioning, yoga classes, the breathwork studio and the recovery spa with sauna and cold plunge. Members also get free access to The Pelion app, with training programs, guided yoga and breathwork for the days you train away from the gym.</p></details>
+      <details><summary>What is The Pelion app?<i></i></summary><p>The Pelion app is free for every member. It has a kickboxing library to learn every punch, kick and defense by name, strength programs including five Ancient Warrior programs with their own soundtracks, guided yoga flows with an instructor on video, breathwork sessions from 12 to 45 minutes set to original music, a fasting timer and nutrition guides, plus the class schedule for members. It is coming to the App Store.</p></details>
       <details><summary>When do monthly payments start?<i></i></summary><p>Only when the doors open. Your deposit holds the spot until then.</p></details>
       <details><summary>Do I need experience in martial arts or yoga?<i></i></summary><p>No. Classes are coached for every level, from your first session to competition prep.</p></details>
       <details><summary>Do you offer family or kids memberships?<i></i></summary><p>Yes. Once The Pelion opens, family packages and kids memberships will be available at a discounted rate. Everyone on the list hears the details first.</p></details>
