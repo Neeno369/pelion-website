@@ -236,6 +236,18 @@ section{position:relative}
 .bar{height:4px;background:var(--ash);border-radius:4px;overflow:hidden}
 .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--bronze-deep),var(--bronze));transition:width 1.6s var(--ease)}
 .tier .btn{justify-content:center;margin-top:auto}
+.ways{margin-top:clamp(28px,4vw,44px);border:1px solid var(--ash);background:var(--basalt);padding:clamp(22px,3vw,36px);display:grid;gap:14px}
+.ways h3{font-size:clamp(24px,2.3vw,30px)}
+.ways-note{color:var(--stone);font-size:15px}
+.ways-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(22px,3vw,40px);margin-top:10px}
+.way{min-width:0}
+.way-title{font:600 12px/1 var(--f-body);letter-spacing:.22em;text-transform:uppercase;color:var(--bronze);margin:0 0 6px}
+.way ul{list-style:none;margin:0;padding:0}
+.way li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:10px 0;border-bottom:1px solid var(--ash);font-size:15px;color:var(--bone)}
+.way li small{display:block;font-size:13px;color:var(--stone);margin-top:2px}
+.way-fine{font-size:13px;line-height:1.5;color:var(--stone);margin:12px 0 0}
+.way li b{font:600 18px/1 var(--f-display);color:var(--bronze);font-variant-numeric:tabular-nums}
+@media (max-width:760px){.ways-grid{grid-template-columns:1fr}}
 .deposit{margin-top:clamp(28px,4vw,44px);display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;border:1px dashed rgba(201,164,106,.45);padding:22px 26px}
 .deposit .big{font:600 44px/1 var(--f-display);color:var(--bronze)}
 .deposit p{color:var(--stone);max-width:62ch}
@@ -374,7 +386,7 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
   <symbol id="chk" viewBox="0 0 16 16"><path d="M2.5 8.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
 </svg>
 
-<div class="announce">Founding pre-sale is open. <b>100 VIP spots at $159/mo.</b> <a href="#reserve">Reserve with a refundable $50 deposit</a> · The Pelion app is free for members.</div>
+<div class="announce">Founding pre-sale is open. <b>50 VIP spots at $179/mo.</b> <a href="#reserve">Reserve your discounted founding rate for just $1</a> · The Pelion app is free for members.</div>
 
 <header class="nav" id="nav">
   <div class="wrap">
@@ -397,7 +409,7 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
   <canvas id="embers" aria-hidden="true"></canvas>
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="eyebrow fade-in">Martial Arts · Strength Training · Yoga · Breathwork · Recovery</p>
+      <p class="eyebrow fade-in">Fight. Lift. Flow. Breathe. Recover.</p>
       <h1>
         <span class="line"><span>More than</span></span>
         <span class="line"><span>martial arts.</span></span>
@@ -409,7 +421,7 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
         <a class="btn btn-ghost" href="#pillars">Explore the sanctuary</a>
       </div>
       <ul class="assure fade-in">
-        <li><svg><use href="#chk"/></svg>$50 deposit, fully refundable</li>
+        <li><svg><use href="#chk"/></svg>Just $1 to reserve, fully refundable</li>
         <li><svg><use href="#chk"/></svg>No sign-up fee for founders</li>
         <li><svg><use href="#chk"/></svg>Pay monthly only once we open</li>
         <li><svg><use href="#chk"/></svg>The Pelion app free for members</li>
@@ -468,7 +480,7 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
       <div role="button" tabindex="0" class="pillar" aria-expanded="false"><img src="img/yoga-studio.jpg" alt=""><span class="num">III</span><span class="vlabel">Yoga</span>
         <span class="body"><h3>Yoga</h3><p>Mindful movement and somatic flexibility. A disciplined approach to mobility, alignment and a body that lasts.</p><ul><li>Mobility</li><li>Alignment</li><li>Longevity</li></ul></span></div>
       <div role="button" tabindex="0" class="pillar" aria-expanded="false"><img src="img/breathwork-room.jpg" alt=""><span class="num">IV</span><span class="vlabel">Breathwork</span>
-        <span class="body"><h3>Breathwork</h3><p>A meditation room tuned with audio frequencies for deep neural restoration and mental clarity.</p><ul><li>Frequency room</li><li>Guided sessions</li></ul></span></div>
+        <span class="body"><h3>Breathwork</h3><p>A meditation room tuned with audio frequencies for deep neural restoration and mental clarity.</p><ul><li>Frequency room</li><li>Studio access</li><li>Occasional live classes</li></ul></span></div>
       <div role="button" tabindex="0" class="pillar ice" aria-expanded="false"><img src="img/recovery-room.jpg" alt=""><span class="num">V</span><span class="vlabel">Recovery</span>
         <span class="body"><h3>Recovery</h3><p>Restore balance in the thermal spa. Heat in the sauna, then reset in the cold plunge. Included in every membership.</p><ul><li>Sauna</li><li>Cold plunge</li></ul></span></div>
     </div>
@@ -490,13 +502,13 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
         <label class="opt"><input type="checkbox" id="o-gym" value="65" checked><span><b>Gym membership</b><small>Weight room for strength and conditioning</small></span><span class="amt">$65</span></label>
         <label class="opt"><input type="checkbox" id="o-yoga" value="110" checked><span><b>Yoga studio</b><small>Unlimited classes</small></span><span class="amt">$110</span></label>
         <label class="opt"><input type="checkbox" id="o-spa" value="249" checked><span><b>Recovery spa</b><small>Sauna and cold plunge, unlimited</small></span><span class="amt">$249</span></label>
-        <label class="opt"><input type="checkbox" id="o-breath" value="55" checked><span><b>Breathwork classes</b><small>One guided session</small></span><span class="amt">$55</span></label>
+        <label class="opt"><input type="checkbox" id="o-breath" value="55" checked><span><b>Breathwork sessions</b><small>One guided session</small></span><span class="amt">$55</span></label>
       </div>
       <div class="totals">
         <div class="strike"><span>Separately</span><b id="sepTotal">$629</b></div>
-        <div class="ours"><span>The Pelion VIP</span><b>$159</b></div>
+        <div class="ours"><span>The Pelion VIP</span><b>$179</b></div>
       </div>
-      <p class="save" id="saveLine">You keep <b id="saveAmt">$470</b> a month, or <b id="saveYr">$5,640</b> a year.</p>
+      <p class="save" id="saveLine">You keep <b id="saveAmt">$450</b> a month, or <b id="saveYr">$5,400</b> a year.</p>
       <p class="fine">Separate prices are published monthly rates at Buffalo-area gyms, martial arts academies, yoga studios and recovery spas, October 2026.</p>
     </div>
   </div>
@@ -553,71 +565,111 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
   <div class="wrap">
     <div class="head" data-reveal>
       <div style="display:grid;gap:18px"><p class="eyebrow">Founding pre-sale</p><h2>Claim a founding rate <span class="voice">before they go.</span></h2></div>
-      <p class="lede">Founding membership is limited to the first 200 members. After that, the standard rate is $199 a month. Every tier includes every pillar, unlimited. Discounted family and kids memberships will be available once we open.</p>
+      <p class="lede">Founding membership is limited to the first 100 members. After that, All-Access is $249 a month. All three include every pillar, unlimited. Focused, family and kids memberships start when we open.</p>
     </div>
     <div class="tiers" id="tiers">
       <article class="tier hero-tier" data-reveal>
         <span class="flag">Best rate</span>
         <div><p class="kicker">Tier one</p><h3>VIP Founder</h3></div>
-        <div class="price"><b>$<span data-count="159">159</span></b><span>/ month</span></div>
-        <p class="terms">12-month contract. First 100 members only.</p>
-        <span class="badge-save">Save $480 a year vs Open Door</span>
+        <div class="price"><b>$<span data-count="179">179</span></b><span>/ month</span></div>
+        <p class="terms">12-month contract. Founding price locked for the full year, then $229 as a Founder Alumni. $49 yearly maintenance fee. First 50 members only.</p>
+        <span class="badge-save">Save $840 a year vs All-Access</span>
         <ul class="incl">
           <li><svg><use href="#chk"/></svg>Unlimited kickboxing and cardio kickboxing</li>
           <li><svg><use href="#chk"/></svg>Weight room: strength and conditioning</li>
           <li><svg><use href="#chk"/></svg>Yoga classes</li>
-          <li><svg><use href="#chk"/></svg>Breathwork studio</li>
+          <li><svg><use href="#chk"/></svg>Access to the breathwork studio</li>
           <li><svg><use href="#chk"/></svg>Recovery spa: sauna and cold plunge</li>
           <li><svg><use href="#chk"/></svg>The Pelion app, free: training programs, guided yoga and breathwork</li>
           <li><svg><use href="#chk"/></svg>No sign-up fee</li>
         </ul>
-        <div class="spots"><div class="row"><span>Spots remaining</span><b><span class="left" data-tier="vip">100</span> of 100</b></div><div class="bar"><i data-tier="vip"></i></div></div>
-        <a class="btn btn-solid magnet" href="#reserve" data-tier-pick="VIP Founder ($159/mo)">Reserve for $50 <svg><use href="#arr"/></svg></a>
+        <div class="spots"><div class="row"><span>Spots remaining</span><b><span class="left" data-tier="vip">50</span> of 50</b></div><div class="bar"><i data-tier="vip"></i></div></div>
+        <a class="btn btn-solid magnet" href="#reserve" data-tier-pick="VIP Founder ($179/mo)">Reserve for $1 <svg><use href="#arr"/></svg></a>
       </article>
       <article class="tier" data-reveal>
         <div><p class="kicker">Tier two</p><h3>Core Founder</h3></div>
-        <div class="price"><b>$<span data-count="179">179</span></b><span>/ month</span></div>
-        <p class="terms">12-month contract. Opens when Tier One fills.</p>
-        <span class="badge-save">Save $240 a year vs Open Door</span>
+        <div class="price"><b>$<span data-count="199">199</span></b><span>/ month</span></div>
+        <p class="terms">12-month contract. Founding price locked for the full year, then $229 as a Founder Alumni. $49 yearly maintenance fee. Opens when Tier One fills.</p>
+        <span class="badge-save">Save $600 a year vs All-Access</span>
         <ul class="incl">
           <li><svg><use href="#chk"/></svg>Unlimited kickboxing and cardio kickboxing</li>
           <li><svg><use href="#chk"/></svg>Weight room: strength and conditioning</li>
           <li><svg><use href="#chk"/></svg>Yoga classes</li>
-          <li><svg><use href="#chk"/></svg>Breathwork studio</li>
+          <li><svg><use href="#chk"/></svg>Access to the breathwork studio</li>
           <li><svg><use href="#chk"/></svg>Recovery spa: sauna and cold plunge</li>
           <li><svg><use href="#chk"/></svg>The Pelion app, free: training programs, guided yoga and breathwork</li>
         </ul>
-        <div class="spots"><div class="row"><span>Spots remaining</span><b><span class="left" data-tier="core">100</span> of 100</b></div><div class="bar"><i data-tier="core"></i></div></div>
-        <a class="btn btn-ghost" href="#reserve" data-tier-pick="Core Founder ($179/mo)">Get notified <svg><use href="#arr"/></svg></a>
+        <div class="spots"><div class="row"><span>Spots remaining</span><b><span class="left" data-tier="core">50</span> of 50</b></div><div class="bar"><i data-tier="core"></i></div></div>
+        <a class="btn btn-ghost" href="#reserve" data-tier-pick="Core Founder ($199/mo)">Get notified <svg><use href="#arr"/></svg></a>
       </article>
       <article class="tier" data-reveal>
-        <div><p class="kicker">At launch</p><h3>Open Door</h3></div>
-        <div class="price"><b>$<span data-count="199">199</span></b><span>/ month</span></div>
-        <p class="terms">12-month contract. $49 sign-up fee. Available when we open.</p>
+        <div><p class="kicker">At launch</p><h3>All-Access</h3></div>
+        <div class="price"><b>$<span data-count="249">249</span></b><span>/ month</span></div>
+        <p class="terms">12-month contract, or $279 a month with no contract. $99 enrollment fee and $49 yearly maintenance fee. Available when we open.</p>
         <span class="badge-save" style="opacity:.6">Standard rate</span>
         <ul class="incl">
           <li><svg><use href="#chk"/></svg>Unlimited kickboxing and cardio kickboxing</li>
           <li><svg><use href="#chk"/></svg>Weight room: strength and conditioning</li>
           <li><svg><use href="#chk"/></svg>Yoga classes</li>
-          <li><svg><use href="#chk"/></svg>Breathwork studio</li>
+          <li><svg><use href="#chk"/></svg>Access to the breathwork studio</li>
           <li><svg><use href="#chk"/></svg>Recovery spa: sauna and cold plunge</li>
           <li><svg><use href="#chk"/></svg>The Pelion app, free: training programs, guided yoga and breathwork</li>
+          <li><svg><use href="#chk"/></svg>2 guest passes</li>
         </ul>
         <div class="spots"><div class="row"><span>Availability</span><b>Unlimited</b></div><div class="bar"><i style="width:100%;opacity:.35"></i></div></div>
         <a class="btn btn-ghost" href="#reserve" data-tier-pick="Just send me updates">Join the list <svg><use href="#arr"/></svg></a>
       </article>
     </div>
+    <div class="ways" data-reveal>
+      <h3>Every way to <span class="voice">join.</span></h3>
+      <p class="ways-note">Prices once we open, plus a yearly maintenance fee of $49 per membership or $99 per family. Founding rates above are the best value in the building.</p>
+      <div class="ways-grid">
+      <div class="way">
+        <p class="way-title">Focused memberships</p>
+        <ul>
+          <li><span>Fight + Recovery<small>Martial arts, weight room, sauna and cold plunge. Not included: yoga and breathwork studio.</small></span><b>$219</b></li>
+          <li><span>Flow + Recovery<small>Yoga, breathwork studio, sauna and cold plunge. Not included: martial arts and weight room.</small></span><b>$179</b></li>
+          <li><span>Strength + Recovery<small>Weight room, sauna and cold plunge. Not included: martial arts, yoga and breathwork studio.</small></span><b>$169</b></li>
+          <li><span>Recovery Only<small>Unlimited sauna and cold plunge. Not included: martial arts, weight room, yoga and breathwork studio.</small></span><b>$139</b></li>
+          <li><span>Off-Peak All-Access<small>Every pillar, weekdays 9am to 4pm and weekends. Not included: weekdays before 9am and after 4pm.</small></span><b>$159</b></li>
+          <li><span>Recovery Off-Peak<small>Sauna and cold plunge, weekdays 9am to 4pm and weekends. Not included: weekdays before 9am and after 4pm, martial arts, weight room, yoga and breathwork studio.</small></span><b>$99</b></li>
+          <li><span>Student / First Responder<small>All-Access with ID. Every pillar included.</small></span><b>$209</b></li>
+        </ul>
+      </div>
+      <div class="way">
+        <p class="way-title">Family</p>
+        <ul>
+          <li><span>Family Gold<small>2 adults: All-Access, every pillar unlimited, including kickboxing, weight room, yoga, breathwork studio, sauna and cold plunge. 2 kids: their age-group program. Adults have nothing excluded.</small></span><b>$549</b></li>
+          <li><span>Family Silver<small>2 adults: All-Access except recovery, with unlimited kickboxing and cardio kickboxing, weight room, yoga and access to the breathwork studio. 2 kids: their age-group program. Not included: sauna and cold plunge.</small></span><b>$449</b></li>
+          <li><span>Extra kid on a family plan<small>Each kid beyond 2</small></span><b>$79</b></li>
+          <li><span>Kid added to an adult membership</span><b>$119</b></li>
+        </ul>
+        <p class="way-fine">For one household. Kids are ages 4 to 17 and join Little Warriors, Junior Warriors or Teen Athletes by age. Sauna and cold plunge are for adults 18 and over.</p>
+      </div>
+      <div class="way">
+        <p class="way-title">Kids</p>
+        <ul>
+          <li><span>Little Warriors, ages 4 to 6<small>Unlimited kids classes. Not included: adult classes, weight room, yoga, breathwork studio, sauna and cold plunge.</small></span><b>$129</b></li>
+          <li><span>Junior Warriors, ages 7 to 12<small>Unlimited kids classes. Not included: adult classes, weight room, yoga, breathwork studio, sauna and cold plunge.</small></span><b>$159</b></li>
+          <li><span>Teen Athletes, ages 13 to 17<small>Kickboxing and supervised strength, with coach-led breathwork in class. Not included: yoga, breathwork studio, sauna and cold plunge.</small></span><b>$179</b></li>
+        </ul>
+      </div>
+      <div class="way">
+        <p class="way-title">Drop in</p>
+        <ul>
+          <li><span>7-day trial<small>All-Access for 1 week</small></span><b>$99</b></li>
+          <li><span>Day pass<small>All-Access for 1 day</small></span><b>$49</b></li>
+        </ul>
+      </div>
+      </div>
+    </div>
     <div class="commit" data-reveal>
       <h3>Why we ask for <span class="voice">a year.</span></h3>
       <p>The Pelion is built for people who are committed to their health and well-being. The body is a machine that responds to consistent, intelligent training, and the mind needs the same discipline to stay sharp and calibrated. Asking for that commitment brings together members who take the work seriously, so everyone who walks in raises the standard.</p>
     </div>
-    <div class="commit" data-reveal>
-      <h3>Train as a <span class="voice">family.</span></h3>
-      <p>Once The Pelion opens, family packages and kids memberships will be available at a discounted rate, so the whole household can train, recover and grow stronger together. Reserve your spot to be the first to hear the details.</p>
-    </div>
     <div class="deposit" data-reveal>
-      <span class="big">$50</span>
-      <p><b>Your deposit is fully refundable.</b> Reserve your spot and pay the $50 online by card, PayPal or Venmo. If the facility does not meet your expectations at launch, you get it back. Your monthly membership only starts when the doors open.</p>
+      <span class="big">$1</span>
+      <p><b>Just $1 locks in your limited founding discount.</b> Reserve your spot and pay the $1 online by card, PayPal or Venmo. The rest is charged when you sign in on opening day, and your monthly membership only starts when the doors open. If the facility does not meet your expectations at launch, you get your $1 back.</p>
       <a class="btn btn-solid magnet" href="#reserve">Reserve now</a>
     </div>
   </div>
@@ -627,9 +679,9 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
   <div class="wrap">
     <div class="head" data-reveal><div style="display:grid;gap:18px"><p class="eyebrow">How the pre-sale works</p><h2>Three steps to founder.</h2></div></div>
     <div class="steps" data-reveal>
-      <div class="step"><h3>Reserve with $50</h3><p>Secure a VIP spot at $159 a month. No sign-up fee.</p></div>
+      <div class="step"><h3>Reserve with $1</h3><p>Secure a limited VIP spot at the discounted $179 a month. No sign-up fee.</p></div>
       <div class="step"><h3>Watch it rise</h3><p>Founders get build updates, first looks at the space and the opening date before anyone else.</p></div>
-      <div class="step"><h3>Walk in on day one</h3><p>Your membership begins at launch. Not what we promised? Your deposit comes back in full.</p></div>
+      <div class="step"><h3>Walk in on day one</h3><p>Sign in on opening day and the rest is charged then. Not what we promised? Your $1 comes back.</p></div>
     </div>
   </div>
 </section>
@@ -652,13 +704,14 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
   <div class="wrap faq-grid">
     <div data-reveal style="display:grid;gap:18px;align-content:start"><p class="eyebrow">Questions</p><h2>Before you reserve.</h2></div>
     <div>
-      <details open><summary>Is the $50 deposit really refundable?<i></i></summary><p>Yes. If the facility does not meet your complete expectations when it opens, the full deposit is returned.</p></details>
-      <details><summary>How long does the founding rate last?<i></i></summary><p>Your founding rate, $159 a month for VIP Founders or $179 a month for Core Founders, stays locked in for as long as your membership remains active and each payment is made within 7 days of its due date. If you cancel, the founding rate is lost, and rejoining later is at the standard rate at that time.</p></details>
-      <details><summary>What is included in the membership?<i></i></summary><p>Every tier includes unlimited, all-inclusive access to kickboxing and cardio kickboxing classes, the weight room for strength and conditioning, yoga classes, the breathwork studio and the recovery spa with sauna and cold plunge. Members also get free access to The Pelion app, with training programs, guided yoga and breathwork for the days you train away from the gym.</p></details>
+      <details open><summary>Why only $1, and is it refundable?<i></i></summary><p>The $1 simply reserves your limited, discounted founding membership. Nothing else is charged until you sign in on opening day. If the facility does not meet your complete expectations when it opens, your $1 is returned.</p></details>
+      <details><summary>How long does the founding rate last?<i></i></summary><p>Your founding rate, $179 a month for VIP Founders or $199 a month for Core Founders, stays locked in for 12 months from the day we open, as long as your membership remains active and each payment is made within 7 days of its due date. After 12 months it moves to the Founder Alumni rate of $229 a month for as long as you stay a member. If you cancel, the founding and alumni rates are lost, and rejoining later is at the standard rate at that time.</p></details>
+      <details><summary>Are there any other fees?<i></i></summary><p>Every membership has a $49 yearly maintenance fee. Family packages pay one fee of $99 a year for the whole family. All-Access also has a $99 enrollment fee. VIP Founders pay no sign-up fee.</p></details>
+      <details><summary>What is included in the membership?<i></i></summary><p>Every tier includes unlimited, all-inclusive access to kickboxing and cardio kickboxing classes, the weight room for strength and conditioning, yoga classes, access to the breathwork studio and the recovery spa with sauna and cold plunge. Members also get free access to The Pelion app, with training programs, guided yoga and breathwork for the days you train away from the gym.</p></details>
       <details><summary>What is The Pelion app?<i></i></summary><p>The Pelion app is free for every member. It has a kickboxing library to learn every punch, kick and defense by name, strength programs including five Ancient Warrior programs with their own soundtracks, guided yoga flows with an instructor on video, breathwork sessions from 12 to 45 minutes set to original music, a fasting timer and nutrition guides, plus the class schedule for members. It is coming to the App Store.</p></details>
-      <details><summary>When do monthly payments start?<i></i></summary><p>Only when the doors open. Your deposit holds the spot until then.</p></details>
+      <details><summary>When do monthly payments start?<i></i></summary><p>Only when the doors open. Your $1 holds the spot until then, and the rest is charged when you sign in on opening day.</p></details>
       <details><summary>Do I need experience in martial arts or yoga?<i></i></summary><p>No. Classes are coached for every level, from your first session to competition prep.</p></details>
-      <details><summary>Do you offer family or kids memberships?<i></i></summary><p>Yes. Once The Pelion opens, family packages and kids memberships will be available at a discounted rate. Everyone on the list hears the details first.</p></details>
+      <details><summary>Do you offer family or kids memberships?<i></i></summary><p>Yes. Once The Pelion opens, the Family Gold package is $549 a month and the Family Silver package, without recovery, is $449 a month, each for 2 adults and 2 kids. Kids memberships start at $129 a month. Everyone on the list hears the details first.</p></details>
     </div>
   </div>
 </section>
@@ -694,7 +747,7 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
   <div class="wrap">
     <p class="eyebrow" style="justify-content:center">Establish your legacy</p>
     <h2 style="margin-top:20px">Be among<br><span class="voice">the first hundred.</span></h2>
-    <p class="lede">Founding spots go in order. Reserve your spot and pay the $50 refundable deposit online by card, PayPal or Venmo and join the list for build updates and the opening date.</p>
+    <p class="lede">Founding spots go in order. Reserve your spot for just $1 online by card, PayPal or Venmo. The rest is charged when you sign in on opening day. You also join the list for build updates and the opening date.</p>
     <form class="list-form" id="reserve" novalidate>
       <input type="hidden" name="_subject" value="New Pelion reservation">
       <input type="hidden" name="_template" value="table">
@@ -703,9 +756,9 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
       <label for="f-email">Email</label><input id="f-email" name="email" type="email" placeholder="Email" autocomplete="email" required>
       <label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" placeholder="Phone" autocomplete="tel" required>
       <label for="f-tier">Membership</label><select id="f-tier" name="membership">
-        <option>VIP Founder ($159/mo)</option>
-        <option>Core Founder ($179/mo)</option>
-        <option>Open Door ($199/mo + $49 sign-up)</option>
+        <option>VIP Founder ($179/mo)</option>
+        <option>Core Founder ($199/mo)</option>
+        <option>All-Access ($249/mo + $99 enrollment + $49 yearly maintenance)</option>
         <option>Just send me updates</option>
       </select>
       <label for="f-source">Where did you hear about us?</label><select id="f-source" name="heard_about_us" style="grid-column:1/-1">
@@ -735,12 +788,12 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
   </div>
 </footer>
 
-<div class="dock" id="dock"><div><b>From $159/mo</b>$50 refundable deposit</div><a class="btn btn-solid" href="#founders">Reserve</a></div>
+<div class="dock" id="dock"><div><b>From $179/mo</b>Reserve for just $1</div><a class="btn btn-solid" href="#founders">Reserve</a></div>
 
 <script>
 (function(){
   // Live founding inventory. Wire these to the real counts from the checkout system.
-  var SPOTS = { vip:{left:100,total:100}, core:{left:100,total:100} };
+  var SPOTS = { vip:{left:50,total:50}, core:{left:50,total:50} };
 
   var doc=document.documentElement; doc.classList.add('js');
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -842,7 +895,7 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
   function fmt(n){ return '$'+n.toLocaleString('en-US'); }
   function calc(){
     var sum=0; opts.querySelectorAll('input:checked').forEach(function(i){ sum+=+i.value; });
-    var save=sum-159;
+    var save=sum-179;
     document.getElementById('sepTotal').textContent=fmt(sum);
     var line=document.getElementById('saveLine');
     if(save>0) line.innerHTML='You keep <b>'+fmt(save)+'</b> a month, or <b>'+fmt(save*12)+'</b> a year.';
@@ -878,7 +931,7 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
 
   // reservation form: emailed through FormSubmit
   var FORM_ENDPOINT='https://formsubmit.co/ajax/bfasano84@gmail.com';
-  // $50 deposit checkout links. Leave both empty to collect by follow-up.
+  // $1 reservation checkout links. Leave both empty to collect by follow-up.
   var PAYPAL_LINK='';   // PayPal, Venmo and cards
   var STRIPE_LINK='';   // cards, Apple Pay and Google Pay
   var PAY_LINKS=[[PAYPAL_LINK,'Pay with PayPal or Venmo'],[STRIPE_LINK,'Pay by card']].filter(function(l){return l[0];});
@@ -917,7 +970,7 @@ footer address{font-style:normal;line-height:1.6;letter-spacing:.04em}
         t.textContent='Thank you, '+name.value.trim().split(' ')[0]+'. Your request is in, and we will reach out at '+email.value.trim()+' about your spot.';
         var tier=form.querySelector('#f-tier').value;
         if(PAY_LINKS.length && tier!=='Just send me updates'){
-          t.textContent='Thank you, '+name.value.trim().split(' ')[0]+'. One step left: pay the $50 refundable deposit to hold your spot.';
+          t.textContent='Thank you, '+name.value.trim().split(' ')[0]+'. One step left: pay $1 to hold your discounted spot. The rest is charged when you sign in on opening day.';
           var row=document.createElement('div'); row.style.cssText='display:flex;flex-wrap:wrap;gap:12px;margin-top:20px;font-style:normal';
           PAY_LINKS.forEach(function(l,i){
             var a=document.createElement('a'); a.className='btn '+(i?'btn-ghost':'btn-solid'); a.href=l[0]; a.target='_blank'; a.rel='noopener'; a.textContent=l[1]; row.appendChild(a);
